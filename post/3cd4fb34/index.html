@@ -1,0 +1,3115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="blog,HCLonely">
+<meta name="description" content="一个懒人的博客">
+<meta name="theme-color" content="#000">
+<title>一款基于webstack的hexo主题 | HCLonely Blog</title>
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/HCLonely/gridea@master/favicon.ico?v=1593002498623">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/gridea@master/media/css/gemini.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/gridea@master/media/fonts/font-awesome.css">
+<link
+  href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+  rel="stylesheet" type="text/css">
+
+<link href="https://cdn.jsdelivr.net/gh/HCLonely/gridea@master/media/hljs/styles/dracula.css"
+  rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/gridea@master/styles/main.css">
+
+<script src="https://cdn.jsdelivr.net/gh/HCLonely/gridea@master/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+  integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+
+
+
+
+  <meta name="description" content="一款基于webstack的hexo主题" />
+  <meta name="keywords" content="主题,Hexo" />
+</head>
+
+<body>
+  <div class="head-top-line"></div>
+  <div class="header-box">
+    
+<div class="gemini">
+  <header class="header  ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
+        </div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
+          
+            <a href="/" class="brand">
+              <span>HCLonely Blog</span>
+            </a>  
+          
+        </div>
+        
+          <p class="subtitle">一个懒人的博客</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/" target="_self">
+                  <i class="fa fa-home"></i> 首页
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/archives/" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/tags/" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="https://blog.hclonely.com/" target="_self">
+                  <i class="fa fa-globe"></i> 主站
+                </a>
+              
+            </li>
+          
+          
+            
+              <li class="nav-item ">
+                <a href="/friends/" target="_self">
+                  
+                    <i class="fa fa-address-book"></i> 友情链接
+                  
+                </a>
+              </li>
+            
+          
+          
+            <li id="fa_search" class="nav-item">
+              <a href="javascript:void(0);">
+                <i class="fa fa-search"></i> <span class="language" data-lan="search">搜索</span>
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<script type="text/javascript"> 
+ 
+  let showNav = true;
+
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>
+  </div>
+  <div class="main-continer">
+    
+    <div
+      class="section-layout gemini ">
+      <div class="section-layout-wrapper">
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/HCLonely/gridea@master/images/avatar.png"/>
+    <p class="site-author-name">HCLonely</p>
+    
+    <div class="site-description right-motion">
+      
+      
+      
+        <p>懒人一个</p>
+      
+      
+    </div>
+    
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">12</span>
+        <span class="site-item-stat-name language" data-lan="article">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">23</span>
+        <span class="site-item-stat-name language" data-lan="category">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">23</span>
+        <span class="site-item-stat-name language" data-lan="tag">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="https://gridea.hclonely.com/atom.xml" target="_blank">RSS</a>
+        </span>
+      </div>
+    
+  
+  
+    <div class="sidebar-item sidebar-item-social">
+      <div class="social-item">
+        
+          
+            <a href="https://github.com/HCLonely">
+              <i class="fa fa-github-alt" title="Github"></i>
+            </a>
+          
+            <a href="mailto:h1606051253@gmail.com">
+              <i class="fa fa-envelope" title="Email"></i>
+            </a>
+          
+            <a href="https://twitter.com/HCL_Lonely">
+              <i class="fa fa-twitter" title="Twitter"></i>
+            </a>
+          
+            <a href="https://weibo.com/u/5665925139">
+              <i class="fa fa-weibo" title="微博"></i>
+            </a>
+          
+        
+        
+      </div>
+    </div>
+  
+
+
+
+</div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE">配置</a>
+<ul>
+<li><a href="#favicon">favicon</a></li>
+<li><a href="#banner">banner</a></li>
+<li><a href="#logo">logo</a></li>
+<li><a href="#flag">flag</a></li>
+<li><a href="#githubcorner">githubCorner</a></li>
+<li><a href="#since">since</a></li>
+<li><a href="#menu">menu</a></li>
+<li><a href="#about">about</a></li>
+<li><a href="#aboutpage">aboutPage</a></li>
+</ul>
+</li>
+<li><a href="#config">config</a>
+<ul>
+<li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
+<li><a href="#%E5%85%B3%E8%81%94%E8%AE%BE%E7%BD%AE%E5%90%8D%E7%A7%B0%E5%B9%B6%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99">关联设置名称并添加网站</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://gridea.hclonely.com/post/3cd4fb34/">
+      一款基于webstack的hexo主题
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span>2020-06-05</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-folder-o"></i>
+      <span class="pc-show language" data-lan="category-in">分类于</span>
+      
+      
+      <a href="https://gridea.hclonely.com/tag/5mgLRKyMt/">
+        <span>主题</span>
+      </a>、
+      
+      
+      
+      <a href="https://gridea.hclonely.com/tag/iwjeSJRQE/">
+        <span>Hexo</span>
+      </a>
+      
+      
+    </span>
+    <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>7<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>1314<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+  </div>
+</header>
+            <div class="post-body next-md-body" id="post_body">
+              <blockquote>
+<p>一款基于<a href="https://github.com/WebStackPage/WebStackPage.github.io">WebStackPage</a>的 Hexo 主题。<a href="https://webstack.hclonely.com/">Demo</a></p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/HCLonely/hexo-theme-webstack@latest/screenshot/screenshot.png" alt="screenshot" loading="lazy"></figure>
+<h2 id="安装">安装</h2>
+<pre><code class="language-shell">git clone https://github.com/HCLonely/hexo-theme-webstack themes/webstack
+</code></pre>
+<h2 id="配置">配置</h2>
+<h3 id="favicon">favicon</h3>
+<blockquote>
+<p>网站图标</p>
+</blockquote>
+<p>示例：</p>
+<pre><code class="language-yml">favicon: /favicon.ico
+</code></pre>
+<h3 id="banner">banner</h3>
+<blockquote>
+<p>[可选]分享网站到 twitter 和 facebook 时的图片。</p>
+</blockquote>
+<p>示例：</p>
+<pre><code class="language-yml">banner: /images/webstack_banner_cn.png
+</code></pre>
+<h3 id="logo">logo</h3>
+<blockquote>
+<p>网站 logo</p>
+</blockquote>
+<ul>
+<li>
+<p><code>expanded</code>: 侧边栏展开时左上角的 logo</p>
+<figure data-type="image" tabindex="2"><img src="https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/expanded.webp" alt="expanded" loading="lazy"></figure>
+</li>
+<li>
+<p><code>collapsed</code>: 侧边栏收起时左上角的 logo</p>
+<figure data-type="image" tabindex="3"><img src="https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/collapsed.webp" alt="collapsed" loading="lazy"></figure>
+</li>
+<li>
+<p><code>dark</code>: 顶栏为暗色时左上角的 logo, 仅 <code>about</code> 页面生效</p>
+<figure data-type="image" tabindex="4"><img src="https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/dark.webp" alt="dark" loading="lazy"></figure>
+</li>
+</ul>
+<p>示例：</p>
+<pre><code class="language-yml">logo:
+  expanded: /images/logo@2x.png
+  collapsed: /images/logo-collapsed@2x.png
+  dark: /images/logo_dark@2x.png
+</code></pre>
+<h3 id="flag">flag</h3>
+<blockquote>
+<p>语言标识</p>
+</blockquote>
+<ul>
+<li>icon: 语言图标，默认仅有<code>flag-cn</code>和<code>flag-us</code>, 其他图标自行寻找存放于<code>主题目录/source/images/flags/</code></li>
+<li>name: 语言名称</li>
+</ul>
+<p>示例：</p>
+<pre><code class="language-yml">flag:
+  icon: flag-cn
+  name: Chinese
+</code></pre>
+<figure data-type="image" tabindex="5"><img src="https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/flag.webp" alt="flag" loading="lazy"></figure>
+<h3 id="githubcorner">githubCorner</h3>
+<blockquote>
+<p>右上角的 <a href="http://tholman.com/github-corners/">github corner</a></p>
+</blockquote>
+<p>示例：</p>
+<pre><code class="language-yml">githubCorner: '&lt;a href=&quot;https://github.com/HCLonely/hexo-theme-webstack&quot; class=&quot;github-corner&quot; aria-label=&quot;View source on GitHub&quot;&gt;&lt;svg width=&quot;80&quot; height=&quot;80&quot; viewBox=&quot;0 0 250 250&quot; style=&quot;fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2&quot; fill=&quot;currentColor&quot; style=&quot;transform-origin: 130px 106px;&quot; class=&quot;octo-arm&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z&quot; fill=&quot;currentColor&quot; class=&quot;octo-body&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;style&gt;.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}&lt;/style&gt;'
+</code></pre>
+<figure data-type="image" tabindex="6"><img src="https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/github.webp" alt="github" loading="lazy"></figure>
+<h3 id="since">since</h3>
+<blockquote>
+<p>建站年份，显示在页面底部</p>
+</blockquote>
+<p>示例：</p>
+<pre><code class="language-yml">since: 2020
+</code></pre>
+<figure data-type="image" tabindex="7"><img src="https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/since.webp" alt="since" loading="lazy"></figure>
+<h3 id="menu">menu</h3>
+<blockquote>
+<p><strong>[主要]侧边栏菜单设置</strong></p>
+</blockquote>
+<ul>
+<li>name: 分组名</li>
+<li>icon: 分组图标</li>
+<li>config: [主要]分组内容(详细设置查看<a href="#config">Config</a>)，如果有二级菜单则不需要此项！</li>
+<li>submenu: 二级菜单，如果有二级菜单则不需要<code>config</code>, 此选项内容包含<code>name</code>, <code>icon</code>, <code>config</code>选项</li>
+</ul>
+<p>示例：</p>
+<pre><code class="language-yml">menu:
+  - name: 常用工具
+    icon: far fa-star
+    config: hotTools
+  - name: 其他工具
+    icon: fas fa-tools
+    submenu:
+      - name: 开发工具
+        icon: fas fa-tools
+        config: devTools
+      - name: 我的博客
+        icon: fas fa-blog
+        config: myBlog
+</code></pre>
+<figure data-type="image" tabindex="8"><img src="https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/menu.webp" alt="menu" loading="lazy"></figure>
+<h3 id="about">about</h3>
+<blockquote>
+<p>侧边栏的关于本站</p>
+</blockquote>
+<ul>
+<li>url: 关于页面链接</li>
+<li>name: 在侧边栏显示的文字</li>
+<li>icon: 图标</li>
+</ul>
+<p>示例：</p>
+<pre><code class="language-yml">about:
+  url: /about/
+  icon: far fa-heart
+  name: 关于本站
+</code></pre>
+<figure data-type="image" tabindex="9"><img src="https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/about.webp" alt="about" loading="lazy"></figure>
+<h3 id="aboutpage">aboutPage</h3>
+<blockquote>
+<p>关于页面设置</p>
+</blockquote>
+<ol>
+<li>生成关于页面</li>
+</ol>
+<pre><code class="language-shell">hexo new page about
+</code></pre>
+<ol start="2">
+<li>编辑<code>source/about/index.md</code>, 添加<code>type: 'about'</code></li>
+</ol>
+<pre><code class="language-yml">---
+title: about
+date: 2020-06-04 18:11:54
+type: 'about'
+---
+</code></pre>
+<ol start="3">
+<li>编辑主题配置文件的<code>aboutPage</code></li>
+</ol>
+<ul>
+<li>website: 关于本站内容
+<ul>
+<li>head: 标题</li>
+<li>html: 内容，支持<code>html</code>语法</li>
+</ul>
+</li>
+<li>webmaster: 关于站长内容
+<ul>
+<li>head: 标题</li>
+<li>name: 站长名字</li>
+<li>url: 链接</li>
+<li>img: 头像</li>
+<li>description: 描述</li>
+<li>html: 其他内容，支持<code>html</code>语法</li>
+</ul>
+</li>
+</ul>
+<p>示例：</p>
+<pre><code class="language-yml">aboutPage:
+  website:
+    head: 关于本站
+    html: '&lt;blockquote&gt;&lt;p&gt;本站是hexo主题&lt;a href=&quot;https://github.com/HCLonely/hexo-theme-webstack&quot;&gt;hexo-theme-webstack&lt;/a&gt;的demo站。&lt;/p&gt;&lt;/blockquote&gt;'
+  webmaster:
+    head: 关于站长
+    name: HCLonely
+    url: https://blog.hclonely.com/
+    img: /images/logos/myblog.png
+    description: 懒人一个
+    html: '&lt;br /&gt;&lt;blockquote&gt;&lt;p&gt;本站是&lt;a href=&quot;https://github.com/HCLonely&quot;&gt;HCLonely&lt;/a&gt;基于&lt;a href=&quot;https://github.com/WebStackPage/WebStackPage.github.io&quot;&gt;WebStackPage&lt;/a&gt;项目做的一款&lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;主题。&lt;/p&gt;&lt;/blockquote&gt;'
+</code></pre>
+<figure data-type="image" tabindex="10"><img src="https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/aboutPage.webp" alt="aboutPage" loading="lazy"></figure>
+<h2 id="config">config</h2>
+<blockquote>
+<p>[主要]网站内容设置</p>
+</blockquote>
+<h3 id="参数">参数</h3>
+<ul>
+<li>name: 网站名称</li>
+<li>url: 网站链接</li>
+<li>img: 网站图标</li>
+<li>description: 网站描述</li>
+</ul>
+<p>示例：</p>
+<pre><code class="language-yml">- name: HCLonely Blog
+  url: https://blog.hclonely.com/
+  img: /images/logos/myBlog.png
+  description: 一个懒人的博客。
+</code></pre>
+<h3 id="关联设置名称并添加网站">关联设置名称并添加网站</h3>
+<p>在<code>menu</code>和<code>submenu</code>中设置的<code>config</code>的内容为此选项的名称。</p>
+<p>例<code>menu</code>：</p>
+<pre><code class="language-yml">menu:
+  - name: 常用工具
+    icon: far fa-star
+    config: hotTools
+</code></pre>
+<p>则<code>常用工具</code>分组里的网站有以下两种添加方式：</p>
+<ul>
+<li>
+<p>在主题的<code>_config.yml</code>里添加：</p>
+<pre><code class="language-yml">hotTools:
+  - name: HCLonely Blog
+    url: https://blog.hclonely.com/
+    img: /images/logos/myBlog.png
+    description: 一个懒人的博客。
+  - name: Github
+    url: https://github.com/
+    img: /images/logos/github.png
+    description: 面向开源及私有软件项目的托管平台。
+</code></pre>
+</li>
+<li>
+<p>在<code>站点根目录/source/_data/</code>(没有自行创建)内新建<code>hotTools.yml</code>文件，文件内容如下：</p>
+<pre><code class="language-yml">- name: HCLonely Blog
+  url: https://blog.hclonely.com/
+  img: /images/logos/myBlog.png
+  description: 一个懒人的博客。
+- name: Github
+  url: https://github.com/
+  img: /images/logos/github.png
+  description: 面向开源及私有软件项目的托管平台。
+</code></pre>
+</li>
+</ul>
+<p>以上两种方式任选一种即可，建议使用第二种。</p>
+
+            </div>
+            
+              <div class="reward-btn">
+                <div class="reward-btn-text">赞赏</div>
+              </div>
+            
+            
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      HCLonely
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://gridea.hclonely.com/post/3cd4fb34/" title="一款基于webstack的hexo主题">https://gridea.hclonely.com/post/3cd4fb34/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://gridea.hclonely.com/tag/5mgLRKyMt/"># 主题</a>
+    
+      <a href="https://gridea.hclonely.com/tag/iwjeSJRQE/"># Hexo</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="使用cron-job解决Valine-admin因流控原因自动唤醒失败的问题" href="https://gridea.hclonely.com/post/ac04080d/">使用cron-job解决Valine-admin因流控原因自动唤醒失败的问题</a>
+        <a class="nav-mobile-next" title="使用cron-job解决Valine-admin因流控原因自动唤醒失败的问题" href="https://gridea.hclonely.com/post/ac04080d/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+            
+            
+  <script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+
+<style>
+  .v .veditor {
+    min-height: 10rem;
+    background-image: url('https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io@1.5.4/img/comment_bg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(255, 255, 255, 0);
+    resize: none;
+  }
+
+  .v .vwrap {
+    border: 1px solid #000 !important;
+  }
+
+  .v .vbtn {
+    padding: .4rem 1.2rem !important;
+    border-color: #fff !important;
+    background-color: #49b1f5 !important;
+    color: #fff !important;
+    font-size: .7rem !important;
+  }
+
+  .v .vcards .vcard .vh .vmeta .vat {
+    padding: 0 .8rem !important;
+    border: 1px solid #00c4b6 !important;
+    border-radius: 5px !important;
+    color: #00c4b6 !important;
+  }
+</style>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: '3fRtBckgmQwR3uUPqySyKjEk-MdYXbMMI',
+    appKey: 'sTwXjrAVhRm4uRoXXf13TxSJ',
+    avatar: 'monsterid',
+    placeholder: '7:00-23:00发的评论我会立刻收到通知^_^',
+    pageSize: '10',
+    lang: 'zh-cn',
+    enableQQ: 'true' === 'true',
+    visitor: 'true' === 'false',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'false',
+    path : window.location.pathname.replace(/^\/post\//,'/posts/'),
+    recordIP : true,
+    serverURLs : '',
+    master : ["f8c7afb61aea2c203160e90cd3b3a26a", "db6a7492e718d85bbc9507989d210f9e", "db61bf13ef746272a53227821321dd74", "d94661ebf78ff5fbfe3c1bc063c02734"],
+    friends : [],
+    verify : true,
+    requiredFields: ['nick','mail']
+  });
+</script>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-box">
+  <footer class="footer">
+    <div class="copyright">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By <a
+        href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>
+    </div>
+    <div class="poweredby">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </footer>
+  
+  
+  <div class="gemini back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+  
+  
+</div>
+<script>
+
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+    back2TopText = document.querySelector('#back_to_top_text'),
+    drawerBox = document.querySelector('#drawer_box'),
+    rightSideBar = document.querySelector('.sidebar'),
+    viewport = document.querySelector('body');
+
+  function scrollAnimation(currentY, targetY) {
+
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function (e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+
+  window.addEventListener('scroll', function (e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+
+  let hasCacu = false;
+  window.onresize = function () {
+    calcuHeight();
+  }
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
+
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
+    }
+
+    drawerBox.onclick = function () {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function () {
+            window.Velocity(rightMotions, transitionDir, {});
+          }
+        })
+        window.Velocity(viewport, openProp, {
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function () {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp, {
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    }
+  }
+
+  // 链接跳转
+  let newWindow = 'false'
+  if (newWindow === 'true') {
+    let links = document.querySelectorAll('.post-body a')
+    links.forEach(item => {
+      if (!item.classList.contains('btn')) {
+        item.setAttribute("target", "_blank");
+      }
+    })
+  }
+
+  let faSearch = document.querySelector('#fa_search');
+  faSearch.addEventListener('click', function () {
+    document.querySelector('#search_mask').style = ''
+  })
+
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+  
+  // 离开当前页title变化
+  var leaveTitle = "";
+  if (leaveTitle) {
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState == 'hidden') {
+        normal_title = document.title;
+        document.title = leaveTitle;
+      } else {
+        document.title = normal_title;
+      }
+    });
+  }
+
+</script>
+    <div class="light-box" id="light_box"></div>
+<script>
+  let imgs = document.querySelectorAll('.post-body img');
+  let lightBox = document.querySelector('#light_box');
+  lightBox.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
+  lightBox.addEventListener('mousewheel', (e) => {
+    e.preventDefault()
+  })
+  let width = window.innerWidth * 0.8;
+  lightBox.onclick = () => {
+    let img = lightBox.querySelector('img');
+    lightBox.style = '';
+    img && img.remove();
+  }
+  imgs.forEach(item => {
+    item.onclick = function (e) {
+      let lightImg = document.createElement('img');
+      lightImg.src = this.src;
+      lightBox.style = `height: 100%; opacity: 1; background-color: rgba(0, 0, 0, 0.5);cursor: zoom-out;`;
+      lightImg.style = `width: ${width}px;border-radius: 2px;`;
+      lightImg.onclick = function () {
+        lightBox.style = '';
+        this.remove();
+      }
+      lightBox.append(lightImg);
+    }
+  })
+</script>
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持，我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+            <img id="zfb" class="reward-img" src="https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io@1.5.4/img/alipay.jpg" alt="赞赏码">
+          
+          
+            <img id="wx" class="reward-img" src="https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io@1.5.4/img/wechat.png" alt="赞赏码">
+          
+        </div>
+      </div>
+      <p class="reward-word">打赏</p>
+      <p class="reward-tip">你的支持就是我的动力</p>
+    </div>
+    <div class="bottom">
+      
+      <div id="zfbBtn" class="pay-text">
+        支付宝
+      </div>
+      
+      
+      <div id="wxBtn" class="pay-text">
+        微信支付
+      </div>
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        window.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        window.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        window.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        window.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      window.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
+</script>
+
+  </div>
+</body>
+
+  <div class="search-mask" id="search_mask" style="display: none;">
+  <div class="search-box">
+    <div class="search-title">
+      <i class="fa fa-search"></i>
+      <div class="input-box">
+        <input id="search" type="text" class="language" data-lan="search" placeholder="搜索">
+      </div>
+      <i id="close" class="fa fa-times-circle"></i>
+    </div>
+    <div class="stat-box">
+      <span id="stat_count">0</span><span class="language" data-lan="stat">条相关条目，使用了</span><span id="stat_times">0</span><span class="language" data-lan="stat-time">毫秒</span>
+      <hr>
+    </div>
+    <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://gridea.hclonely.com/post/3cd4fb34/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;一款基于&lt;a href=&#34;https://github.com/WebStackPage/WebStackPage.github.io&#34;&gt;WebStackPage&lt;/a&gt;的 Hexo 主题。&lt;a href=&#34;https://webstack.hclonely.com/&#34;&gt;Demo&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/hexo-theme-webstack@latest/screenshot/screenshot.png&#34; alt=&#34;screenshot&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git clone https://github.com/HCLonely/hexo-theme-webstack themes/webstack
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+&lt;h3 id=&#34;favicon&#34;&gt;favicon&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;网站图标&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;favicon: /favicon.ico
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;banner&#34;&gt;banner&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[可选]分享网站到 twitter 和 facebook 时的图片。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;banner: /images/webstack_banner_cn.png
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;logo&#34;&gt;logo&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;网站 logo&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;expanded&lt;/code&gt;: 侧边栏展开时左上角的 logo&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/expanded.webp&#34; alt=&#34;expanded&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;collapsed&lt;/code&gt;: 侧边栏收起时左上角的 logo&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/collapsed.webp&#34; alt=&#34;collapsed&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;dark&lt;/code&gt;: 顶栏为暗色时左上角的 logo, 仅 &lt;code&gt;about&lt;/code&gt; 页面生效&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/dark.webp&#34; alt=&#34;dark&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;logo:
+  expanded: /images/logo@2x.png
+  collapsed: /images/logo-collapsed@2x.png
+  dark: /images/logo_dark@2x.png
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;flag&#34;&gt;flag&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;语言标识&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;icon: 语言图标，默认仅有&lt;code&gt;flag-cn&lt;/code&gt;和&lt;code&gt;flag-us&lt;/code&gt;, 其他图标自行寻找存放于&lt;code&gt;主题目录/source/images/flags/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;name: 语言名称&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;flag:
+  icon: flag-cn
+  name: Chinese
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;5&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/flag.webp&#34; alt=&#34;flag&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;githubcorner&#34;&gt;githubCorner&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;右上角的 &lt;a href=&#34;http://tholman.com/github-corners/&#34;&gt;github corner&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;githubCorner: &#39;&amp;lt;a href=&amp;quot;https://github.com/HCLonely/hexo-theme-webstack&amp;quot; class=&amp;quot;github-corner&amp;quot; aria-label=&amp;quot;View source on GitHub&amp;quot;&amp;gt;&amp;lt;svg width=&amp;quot;80&amp;quot; height=&amp;quot;80&amp;quot; viewBox=&amp;quot;0 0 250 250&amp;quot; style=&amp;quot;fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;&amp;quot; aria-hidden=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;path d=&amp;quot;M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;&amp;lt;path d=&amp;quot;M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2&amp;quot; fill=&amp;quot;currentColor&amp;quot; style=&amp;quot;transform-origin: 130px 106px;&amp;quot; class=&amp;quot;octo-arm&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;&amp;lt;path d=&amp;quot;M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z&amp;quot; fill=&amp;quot;currentColor&amp;quot; class=&amp;quot;octo-body&amp;quot;&amp;gt;&amp;lt;/path&amp;gt;&amp;lt;/svg&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;style&amp;gt;.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}&amp;lt;/style&amp;gt;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;6&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/github.webp&#34; alt=&#34;github&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;since&#34;&gt;since&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;建站年份，显示在页面底部&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;since: 2020
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;7&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/since.webp&#34; alt=&#34;since&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;menu&#34;&gt;menu&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;[主要]侧边栏菜单设置&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;name: 分组名&lt;/li&gt;
+&lt;li&gt;icon: 分组图标&lt;/li&gt;
+&lt;li&gt;config: [主要]分组内容(详细设置查看&lt;a href=&#34;#config&#34;&gt;Config&lt;/a&gt;)，如果有二级菜单则不需要此项！&lt;/li&gt;
+&lt;li&gt;submenu: 二级菜单，如果有二级菜单则不需要&lt;code&gt;config&lt;/code&gt;, 此选项内容包含&lt;code&gt;name&lt;/code&gt;, &lt;code&gt;icon&lt;/code&gt;, &lt;code&gt;config&lt;/code&gt;选项&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;menu:
+  - name: 常用工具
+    icon: far fa-star
+    config: hotTools
+  - name: 其他工具
+    icon: fas fa-tools
+    submenu:
+      - name: 开发工具
+        icon: fas fa-tools
+        config: devTools
+      - name: 我的博客
+        icon: fas fa-blog
+        config: myBlog
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;8&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/menu.webp&#34; alt=&#34;menu&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;about&#34;&gt;about&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;侧边栏的关于本站&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;url: 关于页面链接&lt;/li&gt;
+&lt;li&gt;name: 在侧边栏显示的文字&lt;/li&gt;
+&lt;li&gt;icon: 图标&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;about:
+  url: /about/
+  icon: far fa-heart
+  name: 关于本站
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;9&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/about.webp&#34; alt=&#34;about&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;aboutpage&#34;&gt;aboutPage&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;关于页面设置&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;生成关于页面&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hexo new page about
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;编辑&lt;code&gt;source/about/index.md&lt;/code&gt;, 添加&lt;code&gt;type: &#39;about&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;---
+title: about
+date: 2020-06-04 18:11:54
+type: &#39;about&#39;
+---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;编辑主题配置文件的&lt;code&gt;aboutPage&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;website: 关于本站内容
+&lt;ul&gt;
+&lt;li&gt;head: 标题&lt;/li&gt;
+&lt;li&gt;html: 内容，支持&lt;code&gt;html&lt;/code&gt;语法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;webmaster: 关于站长内容
+&lt;ul&gt;
+&lt;li&gt;head: 标题&lt;/li&gt;
+&lt;li&gt;name: 站长名字&lt;/li&gt;
+&lt;li&gt;url: 链接&lt;/li&gt;
+&lt;li&gt;img: 头像&lt;/li&gt;
+&lt;li&gt;description: 描述&lt;/li&gt;
+&lt;li&gt;html: 其他内容，支持&lt;code&gt;html&lt;/code&gt;语法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;aboutPage:
+  website:
+    head: 关于本站
+    html: &#39;&amp;lt;blockquote&amp;gt;&amp;lt;p&amp;gt;本站是hexo主题&amp;lt;a href=&amp;quot;https://github.com/HCLonely/hexo-theme-webstack&amp;quot;&amp;gt;hexo-theme-webstack&amp;lt;/a&amp;gt;的demo站。&amp;lt;/p&amp;gt;&amp;lt;/blockquote&amp;gt;&#39;
+  webmaster:
+    head: 关于站长
+    name: HCLonely
+    url: https://blog.hclonely.com/
+    img: /images/logos/myblog.png
+    description: 懒人一个
+    html: &#39;&amp;lt;br /&amp;gt;&amp;lt;blockquote&amp;gt;&amp;lt;p&amp;gt;本站是&amp;lt;a href=&amp;quot;https://github.com/HCLonely&amp;quot;&amp;gt;HCLonely&amp;lt;/a&amp;gt;基于&amp;lt;a href=&amp;quot;https://github.com/WebStackPage/WebStackPage.github.io&amp;quot;&amp;gt;WebStackPage&amp;lt;/a&amp;gt;项目做的一款&amp;lt;a href=&amp;quot;https://hexo.io/&amp;quot;&amp;gt;Hexo&amp;lt;/a&amp;gt;主题。&amp;lt;/p&amp;gt;&amp;lt;/blockquote&amp;gt;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;10&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/3cd4fb34/aboutPage.webp&#34; alt=&#34;aboutPage&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;config&#34;&gt;config&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[主要]网站内容设置&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;参数&#34;&gt;参数&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;name: 网站名称&lt;/li&gt;
+&lt;li&gt;url: 网站链接&lt;/li&gt;
+&lt;li&gt;img: 网站图标&lt;/li&gt;
+&lt;li&gt;description: 网站描述&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;- name: HCLonely Blog
+  url: https://blog.hclonely.com/
+  img: /images/logos/myBlog.png
+  description: 一个懒人的博客。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;关联设置名称并添加网站&#34;&gt;关联设置名称并添加网站&lt;/h3&gt;
+&lt;p&gt;在&lt;code&gt;menu&lt;/code&gt;和&lt;code&gt;submenu&lt;/code&gt;中设置的&lt;code&gt;config&lt;/code&gt;的内容为此选项的名称。&lt;/p&gt;
+&lt;p&gt;例&lt;code&gt;menu&lt;/code&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;menu:
+  - name: 常用工具
+    icon: far fa-star
+    config: hotTools
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;则&lt;code&gt;常用工具&lt;/code&gt;分组里的网站有以下两种添加方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在主题的&lt;code&gt;_config.yml&lt;/code&gt;里添加：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;hotTools:
+  - name: HCLonely Blog
+    url: https://blog.hclonely.com/
+    img: /images/logos/myBlog.png
+    description: 一个懒人的博客。
+  - name: Github
+    url: https://github.com/
+    img: /images/logos/github.png
+    description: 面向开源及私有软件项目的托管平台。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;code&gt;站点根目录/source/_data/&lt;/code&gt;(没有自行创建)内新建&lt;code&gt;hotTools.yml&lt;/code&gt;文件，文件内容如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;- name: HCLonely Blog
+  url: https://blog.hclonely.com/
+  img: /images/logos/myBlog.png
+  description: 一个懒人的博客。
+- name: Github
+  url: https://github.com/
+  img: /images/logos/github.png
+  description: 面向开源及私有软件项目的托管平台。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以上两种方式任选一种即可，建议使用第二种。&lt;/p&gt;
+">一款基于webstack的hexo主题</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://gridea.hclonely.com/post/ac04080d/"" data-c="
+          &lt;p&gt;Valine-admin由于Leancloud流控原因，自动唤醒任务可能会失败，详情：https://forum.leancloud.cn/t/topic/22595&lt;br&gt;
+所以这里介绍一个使用第三方计划任务网站进行定时唤醒Valine-admin的方法。&lt;/p&gt;
+&lt;h2 id=&#34;注册cron-job帐号&#34;&gt;注册&lt;a href=&#34;https://cron-job.org/&#34;&gt;cron-job&lt;/a&gt;帐号&lt;/h2&gt;
+&lt;p&gt;注册地址：https://cron-job.org/en/signup/&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注册时的时区请选择&lt;code&gt;Asia/Shanghai&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/ac04080d/1.webp&#34; alt=&#34;注册&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;添加一个计划任务&#34;&gt;添加一个计划任务&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;登陆之后依次点击&lt;code&gt;Members&lt;/code&gt;,&lt;code&gt;cronjobs&lt;/code&gt;,&lt;code&gt;Create cronjob&lt;/code&gt;&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/ac04080d/2.webp&#34; alt=&#34;First&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Title, Address&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Title&lt;/code&gt;可以随便填一个&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Address&lt;/code&gt;填写你的云引擎环境变量的&lt;code&gt;ADMIN_URL&lt;/code&gt;，也就是Leancloud的&lt;code&gt;Web 主机域名&lt;/code&gt;。如果你用的我&lt;a href=&#34;/posts/409d3090/&#34;&gt;Valine添加博主标签及评论微信、QQ通知&lt;/a&gt;文章里的最新版的仓库，还需要在后面加上&lt;code&gt;/start&lt;/code&gt;，当然也可以不加，加上会有唤醒日志。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Schedule&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选择&lt;code&gt;User-defined&lt;/code&gt;进行自定义设置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Days of month&lt;/code&gt;: 全选&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Days of week&lt;/code&gt;: 全选&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Months&lt;/code&gt;: 全选&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Hours&lt;/code&gt;: 你需要在哪个时间段唤醒就选择什么&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Minutes&lt;/code&gt;: 选择&lt;code&gt;0&lt;/code&gt;,&lt;code&gt;20&lt;/code&gt;,&lt;code&gt;40&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;按住&lt;kbd&gt;Ctrl&lt;/kbd&gt;可多选&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Notifications&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以不用修改，也可以根据自己的需要修改&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Common&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;勾选&lt;code&gt;Save responses&lt;/code&gt;, 保存唤醒日志&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击&lt;code&gt;Create cronjob&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+">使用cron-job解决Valine-admin因流控原因自动唤醒失败的问题</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://gridea.hclonely.com/post/8422e92e/"" data-c="
+          &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;为Hexo添加哔哩哔哩番剧页面，参考了&lt;a href=&#34;https://github.com/mythsman/hexo-douban&#34;&gt;hexo-douban&lt;/a&gt;的部分代码&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm install hexo-bilibili-bangumi --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;更新&#34;&gt;更新&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm install hexo-bilibili-bangumi --update --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+&lt;p&gt;将下面的配置写入站点的配置文件 &lt;code&gt;_config.yml&lt;/code&gt; 里(不是主题的配置文件).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;bangumi:
+  enable: true
+  path:
+  vmid:
+  title: &#39;追番列表&#39;
+  quote: &#39;生命不息，追番不止！&#39;
+  show: 1
+  loading:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;enable&lt;/strong&gt;: 是否启用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;path&lt;/strong&gt;: 番剧页面路径，默认&lt;code&gt;bangumis/index.html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;vmid&lt;/strong&gt;: 哔哩哔哩番剧页面的 &lt;code&gt;vmid(uid)&lt;/code&gt;,&lt;a href=&#34;#%E8%8E%B7%E5%8F%96uid&#34;&gt;如何获取？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;title&lt;/strong&gt;: 该页面的标题&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;quote&lt;/strong&gt;: 写在页面开头的一段话,支持html语法&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;show&lt;/strong&gt;: 初始显示页面：&lt;code&gt;0: 想看&lt;/code&gt;, &lt;code&gt;1: 在看&lt;/code&gt;, &lt;code&gt;2: 看过&lt;/code&gt;，默认为&lt;code&gt;1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;loading&lt;/strong&gt;: 图片加载完成前的loading图片&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用&#34;&gt;使用&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;在&lt;code&gt;hexo generate&lt;/code&gt;或&lt;code&gt;hexo deploy&lt;/code&gt;之前使用&lt;code&gt;hexo bangumi -u&lt;/code&gt;命令更新番剧数据！&lt;/li&gt;
+&lt;li&gt;删除数据命令:&lt;code&gt;hexo bangumi -d&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;获取uid&#34;&gt;获取uid&lt;/h2&gt;
+&lt;p&gt;登录哔哩哔哩后前往&lt;a href=&#34;https://space.bilibili.com/&#34;&gt;https://space.bilibili.com/&lt;/a&gt;页面，网址最后的一串数字就是 &lt;code&gt;uid&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;需要将追番列表设置为公开！&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;示例&#34;&gt;示例&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.hclonely.com/bangumis/&#34;&gt;示例页面&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;lisense&#34;&gt;Lisense&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/HCLonely/hexo-bilibili-bangumi/blob/master/LICENSE&#34;&gt;Apache Licence 2.0&lt;/a&gt;&lt;/p&gt;
+">Hexo哔哩哔哩番剧页面插件</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://gridea.hclonely.com/post/672d4d3b/"" data-c="
+          &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;为Hexo添加Steam游戏库页面&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm install hexo-steam-games --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;更新&#34;&gt;更新&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ npm install hexo-steam-games --update --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+&lt;p&gt;将下面的配置写入站点的配置文件 &lt;code&gt;_config.yml&lt;/code&gt; 里(不是主题的配置文件).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;steam:
+  enable: true
+  steamId: &#39;*****&#39; #steam 64位Id
+  path:
+  title: Steam游戏库
+  quote: &#39;+1+1+1+1+1&#39;
+  tab: recent
+  length: 1000
+  imgUrl: &#39;*****&#39;
+  proxy:
+    host:
+    port:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;enable&lt;/strong&gt;: 是否启用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;steamId&lt;/strong&gt;: steam 64位Id(需要放在引号里面，不然会有BUG), &lt;em&gt;&lt;strong&gt;需要将steam库设置为公开！&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;path&lt;/strong&gt;: 番剧页面路径，默认&lt;code&gt;steamgames/index.html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;title&lt;/strong&gt;: 该页面的标题&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;quote&lt;/strong&gt;: 写在页面开头的一段话,支持html语法&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;tab&lt;/strong&gt;: &lt;code&gt;all&lt;/code&gt;或&lt;code&gt;recent&lt;/code&gt;, &lt;code&gt;all: 所有游戏&lt;/code&gt;, &lt;code&gt;recent: 最近游玩的游戏&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;length&lt;/strong&gt;: 要显示游戏的数量，游戏太多的话可以限制一下&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;imgUrl&lt;/strong&gt;: 图片链接，在&lt;code&gt;quote&lt;/code&gt;下面放一张图片，图片链接到Steam个人资料，可留空&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;proxy&lt;/strong&gt;: 如果无法访问steam社区的话请使用代理
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;host&lt;/strong&gt;: 代理ip或域名&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;port&lt;/strong&gt;: 代理端口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用&#34;&gt;使用&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;在&lt;code&gt;hexo generate&lt;/code&gt;或&lt;code&gt;hexo deploy&lt;/code&gt;之前使用&lt;code&gt;hexo steam -u&lt;/code&gt;命令更新steam游戏库数据！&lt;/li&gt;
+&lt;li&gt;删除游戏库数据指令:&lt;code&gt;hexo steam -d&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;手动获取游戏库数据&#34;&gt;手动获取游戏库数据&lt;/h2&gt;
+&lt;p&gt;如果&lt;code&gt;hexo steam -u&lt;/code&gt;命令一直获取游戏库数据失败，可以用以下方法手动获取游戏库数据：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;浏览器打开&lt;code&gt;https://steamcommunity.com/id/{steamId}/games?tab={tab}&lt;/code&gt;, &lt;code&gt;{steamId}&lt;/code&gt;和&lt;code&gt;{tab}&lt;/code&gt;分别替换为上面配置中提到的&lt;code&gt;steamId&lt;/code&gt;和&lt;code&gt;tab&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;网页加载完成后，打开浏览器控制台(按&lt;code&gt;F12&lt;/code&gt;)，输入以下代码并回车：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let script = jQuery(&#39;script[language=&amp;quot;javascript&amp;quot;]&#39;);
+var games = [];
+for (let i = 0; i &amp;lt; script.length; i++) {
+  if (script.eq(i).html().includes(&amp;quot;rgGames&amp;quot;)) {
+    let rgGames = script.eq(i).html().match(/var.*?rgGames.*?=.*?(\[[\w\W]*?\}\}\]);/);
+    if (rgGames) {
+      games = JSON.parse(rgGames[1]);
+      break;
+    }
+  }
+}
+document.write(JSON.stringify(games))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将生成的内容复制到&lt;code&gt;博客根目录/node_modules/hexo-steam-games/data/games.json&lt;/code&gt;文件内，如果没有对应的文件或目录，请自行创建&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;示例&#34;&gt;示例&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.hclonely.com/steamgames/&#34;&gt;示例页面&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;lisense&#34;&gt;Lisense&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/HCLonely/hexo-steam-games/blob/master/LICENSE&#34;&gt;Apache Licence 2.0&lt;/a&gt;&lt;/p&gt;
+">Hexo Steam游戏库页面插件</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://gridea.hclonely.com/post/71381355/"" data-c="
+          &lt;h2 id=&#34;功能&#34;&gt;功能&lt;/h2&gt;
+&lt;p&gt;复制网页中的Steamkey后自动激活。&lt;/p&gt;
+&lt;h2 id=&#34;脚本链接&#34;&gt;脚本链接&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/HCLonely/user.js/raw/master/AuTo_Redeem_Steamkey.user.js&#34;&gt;点此安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://greasyfork.org/zh-CN/scripts/36666&#34;&gt;GreasyFork&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;功能介绍&#34;&gt;功能介绍&lt;/h2&gt;
+&lt;h3 id=&#34;首次使用30版本请先设置&#34;&gt;首次使用3.0+版本请先设置：&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;点击Tampermonkey插件图标&lt;/li&gt;
+&lt;li&gt;找到AuTo Redeemer Steamkey下面的&amp;quot;设置&amp;quot;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;功能-2&#34;&gt;功能：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;一键激活页面内所有key&lt;/li&gt;
+&lt;li&gt;第一次点击key会给key添加超链接，再次点击就可以激活&lt;/li&gt;
+&lt;li&gt;复制key询问是否激活&lt;/li&gt;
+&lt;li&gt;选中key显示steam图标，点击图标激活&lt;/li&gt;
+&lt;li&gt;支持多key批量激活&lt;/li&gt;
+&lt;li&gt;若一次激活的Key的数量超过9个则会自动分批激活（等待20秒）&lt;/li&gt;
+&lt;li&gt;激活完成后显示未使用key&lt;/li&gt;
+&lt;li&gt;支持ASF激活(3.0新增)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://store.steampowered.com/account/licenses/&#34;&gt;steam账户页面&lt;/a&gt;和&lt;a href=&#34;https://store.steampowered.com/account/registerkey&#34;&gt;steam激活页面&lt;/a&gt;支持更换国家/地区&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://store.steampowered.com/account/registerkey&#34;&gt;steam激活页面&lt;/a&gt;增加激活sub,激活礼物卡或钱包充值码(测试)功能&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://steamdb.info/freepackages/&#34;&gt;https://steamdb.info/freepackages/&lt;/a&gt;网站点击代码区域后自动复制并跳转到&lt;a href=&#34;https://store.steampowered.com/account/licenses/&#34;&gt;steam账户许可页面&lt;/a&gt;并激活，开启ASF功能后使用&lt;code&gt;!addlicense&lt;/code&gt;功能激活&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;tampermonkey菜单&#34;&gt;Tampermonkey菜单&lt;/h2&gt;
+&lt;h3 id=&#34;设置&#34;&gt;设置&lt;/h3&gt;
+&lt;h4 id=&#34;全局设置&#34;&gt;全局设置&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;新标签页激活&lt;/code&gt;:激活key/sub时打开激活页面激活(同2.X版本)，默认关闭&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;开启复制捕捉&lt;/code&gt;:复制的内容含有&lt;code&gt;AAAAA-BBBBB-CCCCC&lt;/code&gt;格式的内容是询问是否激活，默认开启&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;开启选中捕捉&lt;/code&gt;:选中的文本中含有&lt;code&gt;AAAAA-BBBBB-CCCCC&lt;/code&gt;格式的内容是在鼠标光标右下显示steam图标，点击图标即激活，默认开启&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;开启点击捕捉&lt;/code&gt;:点击的网页中&lt;code&gt;AAAAA-BBBBB-CCCCC&lt;/code&gt;格式的内容是会给次内用添加一个超链接，再次点击即激活，默认开启&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;asf设置&#34;&gt;ASF设置&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ASF IPC协议&lt;/code&gt;:&lt;code&gt;http&lt;/code&gt;或&lt;code&gt;https&lt;/code&gt;,默认&lt;code&gt;http&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ASF IPC地址&lt;/code&gt;:如果是本机运行ASF则是&lt;code&gt;127.0.0.1&lt;/code&gt;,如果是服务器运行则为服务器ip或域名,默认&lt;code&gt;127.0.0.1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ASF IPC端口&lt;/code&gt;:默认&lt;code&gt;1242&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ASF IPC密码&lt;/code&gt;:你设置的ASF IPC密码,默认为空&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ASF Bot名字&lt;/code&gt;:用来激活key的机器人名字,留空则按你ASF设置的激活顺序激活,对单账号用户没影响,可留空,默认为空&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;开启ASF激活&lt;/code&gt;:开启后全局设置中的&lt;code&gt;新标签页激活&lt;/code&gt;功能无效,开启后激活key/sub时使用ASF激活，需配置好以上ASF配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;asf连接测试&#34;&gt;ASF连接测试&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;需开启ASF激活功能并配置好ASF,尝试向ASF发送&lt;code&gt;!stats&lt;/code&gt;命令，如果返回内存用量则为连接成功&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;执行asf命令&#34;&gt;执行ASF命令&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;可远程执行ASF命令&lt;/li&gt;
+&lt;li&gt;提供ASF命令查询功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;查看上次激活记录&#34;&gt;查看上次激活记录&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;可以查看最近一次激活key的记录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;key格式转换&#34;&gt;key格式转换&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;可以将key转换成一下两种格式：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;key&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;key&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;key&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;key,key,key&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+">AuTo Redeem Steamkey脚本</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://gridea.hclonely.com/post/f09c9fef/"" data-c="
+          &lt;h2 id=&#34;功能&#34;&gt;功能&lt;/h2&gt;
+&lt;p&gt;给网页添加一个Live2D看板娘。&lt;/p&gt;
+&lt;h2 id=&#34;脚本链接&#34;&gt;脚本链接&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/HCLonely/live2d.user.js/raw/master/live2d.user.js&#34;&gt;点此安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://greasyfork.org/zh-CN/scripts/388065&#34;&gt;GreasyFork&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;模型预览&#34;&gt;模型预览&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://live2d.hclonely.com/#preview&#34;&gt;https://live2d.hclonely.com/#preview&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;详细设置&#34;&gt;详细设置&lt;/h2&gt;
+&lt;h3 id=&#34;设置参数&#34;&gt;设置参数&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Tips： 已自带默认参数，如无特殊要求可跳过&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;后端接口&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;modelAPI&#39;]&lt;/code&gt;：看板娘 API 地址，默认值 &lt;code&gt;&#39;https://live2d.hclonely.com/&#39;&lt;/code&gt;, 可根据&lt;a href=&#34;https://github.com/fghrsh/live2d_api&#34;&gt;live2d_api&lt;/a&gt;自建api&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;staticAPI&#39;]&lt;/code&gt;：看板娘模型 API 地址，默认值 &lt;code&gt;&#39;https://cdn.jsdelivr.net&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;tipsMessage&#39;]&lt;/code&gt;：提示语读取路径，暂不可改&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;hitokotoAPI&#39;]&lt;/code&gt;：一言 API 接口，可选 &lt;code&gt;&#39;lwl12.com&#39;&lt;/code&gt;，&lt;code&gt;&#39;hitokoto.cn&#39;&lt;/code&gt;，&lt;code&gt;&#39;fghrsh.net&#39;&lt;/code&gt;，&lt;code&gt;&#39;jinrishici.com&#39;&lt;/code&gt; (古诗词)，&lt;code&gt;&#39;rand&#39;&lt;/code&gt; (随机)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;默认模型&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;modelId&#39;]&lt;/code&gt;：默认模型(分组) ID，可 &lt;code&gt;[F12]&lt;/code&gt; 呼出 &lt;code&gt;控制台(Console)&lt;/code&gt; 找到&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;modelTexturesId&#39;]&lt;/code&gt;：默认材质(模型) ID，可 &lt;code&gt;[F12]&lt;/code&gt; 呼出 &lt;code&gt;控制台(Console)&lt;/code&gt; 找到&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;工具栏设置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;showToolMenu&#39;]&lt;/code&gt;：显示工具栏， &lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;canCloseLive2d&#39;]&lt;/code&gt;：关闭看板娘 按钮，&lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;canSwitchModel&#39;]&lt;/code&gt;：切换模型 按钮， &lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;canSwitchTextures&#39;]&lt;/code&gt;：切换材质 按钮， &lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;canSwitchHitokoto&#39;]&lt;/code&gt;：切换一言 按钮， &lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;canTakeScreenshot&#39;]&lt;/code&gt;：看板娘截图 按钮，&lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;canTurnToHomePage&#39;]&lt;/code&gt;：返回首页 按钮， &lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;canTurnToAboutPage&#39;]&lt;/code&gt;：跳转关于页 按钮，&lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;模型切换模式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;modelStorage&#39;]&lt;/code&gt;：记录 ID ，&lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;modelRandMode&#39;]&lt;/code&gt;：模型切换，可选 &lt;code&gt;&#39;rand&#39;&lt;/code&gt; (随机) | &lt;code&gt;&#39;switch&#39;&lt;/code&gt; (顺序)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;modelTexturesRandMode&#39;]&lt;/code&gt;：材质切换，可选 &lt;code&gt;&#39;rand&#39;&lt;/code&gt; | &lt;code&gt;&#39;switch&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;提示消息选项&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;showHitokoto&#39;]&lt;/code&gt;：空闲时一言，&lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;showF12Status&#39;]&lt;/code&gt;：控制台显示加载状态，&lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;showF12Message&#39;]&lt;/code&gt;：提示消息输出到控制台，&lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;showF12OpenMsg&#39;]&lt;/code&gt;：控制台被打开触发提醒，&lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;showCopyMessage&#39;]&lt;/code&gt;：内容被复制触发提醒，&lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;showWelcomeMessage&#39;]&lt;/code&gt;：进入面页时显示欢迎语，&lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;看板娘样式设置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;waifuSize&#39;]&lt;/code&gt;：看板娘大小，例如 &lt;code&gt;&#39;280x250&#39;&lt;/code&gt;，&lt;code&gt;&#39;600x535&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;waifuTipsSize&#39;]&lt;/code&gt;：提示框大小，例如 &lt;code&gt;&#39;250x70&#39;&lt;/code&gt;，&lt;code&gt;&#39;570x150&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;waifuFontSize&#39;]&lt;/code&gt;：提示框字体，例如 &lt;code&gt;&#39;12px&#39;&lt;/code&gt;，&lt;code&gt;&#39;30px&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;waifuToolFont&#39;]&lt;/code&gt;：工具栏字体，例如 &lt;code&gt;&#39;14px&#39;&lt;/code&gt;，&lt;code&gt;&#39;36px&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;waifuToolLine&#39;]&lt;/code&gt;：工具栏行高，例如 &lt;code&gt;&#39;20px&#39;&lt;/code&gt;，&lt;code&gt;&#39;36px&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;waifuToolTop&#39;]&lt;/code&gt;：工具栏顶部边距，例如 &lt;code&gt;&#39;0px&#39;&lt;/code&gt;，&lt;code&gt;&#39;-60px&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;waifuMinWidth&#39;]&lt;/code&gt;：面页小于 指定宽度 隐藏看板娘，例如 &lt;code&gt;&#39;disable&#39;&lt;/code&gt; (停用)，&lt;code&gt;&#39;768px&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;waifuEdgeSide&#39;]&lt;/code&gt;：看板娘贴边方向，例如 &lt;code&gt;&#39;left:0&#39;&lt;/code&gt; (靠左 0px)，&lt;code&gt;&#39;right:30&#39;&lt;/code&gt; (靠右 30px)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;waifuDraggable&#39;]&lt;/code&gt;：拖拽样式，可选 &lt;code&gt;&#39;disable&#39;&lt;/code&gt; (禁用)，&lt;code&gt;&#39;axis-x&#39;&lt;/code&gt; (只能水平拖拽)，&lt;code&gt;&#39;unlimited&#39;&lt;/code&gt; (自由拖拽)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;waifuDraggableRevert&#39;]&lt;/code&gt;：松开鼠标还原拖拽位置，&lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;waifuDraggableSave&#39;]&lt;/code&gt;：是否保存拖拽后的位置，刷新后依然生效，需要将上面的选项和下面的选项都设置为&lt;code&gt;false&lt;/code&gt;，&lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;waifuDraggableClear&#39;]&lt;/code&gt;：清空上次保存的位置，&lt;code&gt;true&lt;/code&gt; | &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;其他杂项设置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;l2dVersion&#39;]&lt;/code&gt;：当前版本 (无需修改)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;l2dVerDate&#39;]&lt;/code&gt;：更新日期 (无需修改)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;homePageUrl&#39;]&lt;/code&gt;：首页地址，可选 &lt;code&gt;&#39;auto&#39;&lt;/code&gt; (自动)，&lt;code&gt;&#39;{URL 网址}&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;aboutPageUrl&#39;]&lt;/code&gt;：关于页地址，&lt;code&gt;&#39;{URL 网址}&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;live2d_settings[&#39;screenshotCaptureName&#39;]&lt;/code&gt;：看板娘截图文件名，例如 &lt;code&gt;&#39;live2d.png&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;定制提示语&#34;&gt;定制提示语&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Tips： &lt;code&gt;waifu-tips.json&lt;/code&gt; 已自带默认提示语，如无特殊要求可跳过&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;waifu&amp;quot;&lt;/code&gt; 系统提示&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;console_open_msg&amp;quot;&lt;/code&gt; 控制台被打开提醒（支持多句随机）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;copy_message&amp;quot;&lt;/code&gt; 内容被复制触发提醒（支持多句随机）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;screenshot_message&amp;quot;&lt;/code&gt; 看板娘截图提示语（支持多句随机）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;hidden_message&amp;quot;&lt;/code&gt; 看板娘隐藏提示语（支持多句随机）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;load_rand_textures&amp;quot;&lt;/code&gt; 随机材质提示语（暂不支持多句）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;hour_tips&amp;quot;&lt;/code&gt; 时间段欢迎语（支持多句随机）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;referrer_message&amp;quot;&lt;/code&gt; 请求来源欢迎语（不支持多句）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;referrer_hostname&amp;quot;&lt;/code&gt; 请求来源自定义名称（根据 host，支持多句随机）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;model_message&amp;quot;&lt;/code&gt; 模型切换欢迎语（根据模型 ID，支持多句随机）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;hitokoto_api_message&amp;quot;&lt;/code&gt;，一言 API 输出模板（不支持多句随机）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;mouseover&amp;quot;&lt;/code&gt; 鼠标触发提示（根据 CSS 选择器，支持多句随机）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;click&amp;quot;&lt;/code&gt; 鼠标点击触发提示（根据 CSS 选择器，支持多句随机）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;seasons&amp;quot;&lt;/code&gt; 节日提示（日期段，支持多句随机）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;模式设置&#34;&gt;模式设置&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;模式切换&lt;/code&gt;：英文输入法下依次按下&amp;quot;↑↑↓↓←→←→BABA&amp;quot;(引号不用按，注意是方向键不是WASD)后可进入互动模式，互动模式下依次按下&amp;quot;ESC&amp;quot;(引号不用按，注意不是&amp;quot;Esc&amp;quot;键而是&amp;quot;E&amp;quot;&amp;quot;S&amp;quot;&amp;quot;C&amp;quot;这三个字母键)后可退出互动模式。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;状态切换&lt;/code&gt;：英文输入法下依次按下&amp;quot;hide&amp;quot;后可隐藏看板娘，隐藏状态下依次按下&amp;quot;show&amp;quot;可再次显示看板娘。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;ps:模式切换后会保存（刷新网页后还是刷新前的状态），状态切换后不会保存（刷新网页后恢复默认状态：显示状态）。&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;普通模式&lt;/code&gt;：默认为普通模式，此模式下为了浏览网页体验看板娘不可操作（看板娘显示在最前但鼠标可以操作后面的元素）。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;互动模式&lt;/code&gt;：此模式下看板娘显示在最前并且鼠标优先操作看板娘。&lt;/li&gt;
+&lt;/ul&gt;
+">live2D看板娘脚本</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://gridea.hclonely.com/post/72a59031/"" data-c="
+          &lt;p&gt;&lt;strong&gt;这里推荐一些好用的谷歌浏览器(Chrome)插件&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;adblock-最佳广告拦截工具&#34;&gt;AdBlock — 最佳广告拦截工具&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;在YouTube、Facebook、Twitch和其他你喜爱的网站上拦截广告和弹窗。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;AdBlock 是最好的广告拦截工具，拥有超过 6000 万用户，也是最受欢迎的 Chrome 扩展程序之一，下载量超过 3.5 亿次！&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;功能特色：&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;☆ 拦截 YouTube、Facebook、Twitch 和所有您喜爱的网站上的弹出窗口、广告和恼人的横幅广告（就连视频广告也可以移除！）&lt;/li&gt;
+&lt;li&gt;☆ 拦截第三方跟踪代码并保护您的隐私&lt;/li&gt;
+&lt;li&gt;☆ 拦截带有恶意软件、诈骗内容和加密货币挖矿代码的恶意广告，让您安全浏览&lt;/li&gt;
+&lt;li&gt;☆ 缩短页面加载时间，享受更快的网络&lt;/li&gt;
+&lt;li&gt;☆ 通过滤镜、白名单、深色模式和其他丰富多彩的主题自定义您的体验&lt;/li&gt;
+&lt;li&gt;☆ AdBlock 团队提供快速、友好的支持，以及强大的帮助中心，使您能够独立排除故障&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/adblock-%E2%80%94-best-ad-blocker/gighmmpiobklfepjocnamgkkbiglidom&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;tampermonkey&#34;&gt;Tampermonkey&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Tampermonkey 是一款免费的浏览器扩展和最为流行的用户脚本管理器，它适用于 Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;扩展管理器extension-manager&#34;&gt;扩展管理器（Extension Manager）&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;一键管理所有扩展，快速开启/禁用、批量闪电管理，智能排序，右键卸载、锁定、选项配置，角标提醒，大小布局随心配。快捷、简单、安全。&lt;/strong&gt;&lt;br&gt;
+&lt;em&gt;特征：&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一键开启/禁用扩展&lt;/li&gt;
+&lt;li&gt;闪电分组：根据场景快速开启/禁用扩展组（被锁定或主题类扩展除外）&lt;/li&gt;
+&lt;li&gt;智能排序：可根据您的使用频率智能排序（默认根据名称排序）&lt;/li&gt;
+&lt;li&gt;右键菜单：提供锁定、卸载、选项配置、主页、APP运行等快捷功能&lt;/li&gt;
+&lt;li&gt;智能搜索：通过关键字或词组快速找到需要的扩展&lt;/li&gt;
+&lt;li&gt;角标提醒：实时显示扩展状态，用完后提醒重置，减少资源占用（被锁定或主题类扩展除外）&lt;/li&gt;
+&lt;li&gt;视图选择：提供列表视图和网格视图，符合用户习惯&lt;br&gt;
+&lt;a href=&#34;https://chrome.google.com/webstore/detail/extension-manager/gjldcdngmdknpinoemndlidpcabkggco&#34;&gt;安装链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;stylus&#34;&gt;Stylus&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Stylus 是一个调整网页外观的用户样式管理器。它可让您轻松地为许多热门网站网站安装主题和皮肤。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;checker-plus-for-gmailtm&#34;&gt;Checker Plus for Gmail™&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;无需打开 Gmail 或 Inbox，即可收到桌面邮件通知，方便地查看、收听或删除邮件，并且支持多账户。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;和同类扩展程序相比，优势在于:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;更多特性和选项！&lt;/li&gt;
+&lt;li&gt;更优秀的客户支持服务！我会根据你们的建议增加新特性。&lt;/li&gt;
+&lt;li&gt;更实时的更新！可参见下方的版本更新记录。&lt;/li&gt;
+&lt;li&gt;最快捷、简便的方式来管理多个电子邮件帐户&lt;/li&gt;
+&lt;li&gt;更安全 - 权限要求更少，相比其他扩展。&lt;/li&gt;
+&lt;li&gt;高评分 - 谷歌应用商店中评分最高的扩展程序之一！太赞了，感谢评分的各位用户！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;特性：&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[新增]采用Gmail聊天提醒中的联系人呈现方式，让您可以选择显示他们的照片或者为他们添加自定义头像&lt;/li&gt;
+&lt;li&gt;[新增]语音提醒:当收到新邮件而您正收看电影或者忙于烹制晚餐时，您可以选择让电脑大声朗读邮件，可以包括发件人、邮件标题、甚至邮件正文。例如:&amp;quot;Jason发来邮件&amp;quot;，或者&amp;quot;Jason说，到我家来吃饭吧&amp;quot;。这项功能也有益于那些视力障碍者。&lt;/li&gt;
+&lt;li&gt;[新增]扩展程序可以根据您的设置监测:所有新邮件、收件箱中的新邮件、或者有特定标签的新邮件&lt;/li&gt;
+&lt;li&gt;[新增]您可以让扩展程序即使在Chrome关闭时依旧在后台运行&lt;/li&gt;
+&lt;li&gt;[新增]在弹出窗口中对邮件进行缩放以显示大尺寸图片&lt;/li&gt;
+&lt;li&gt;您无需打开Gmail网页，可直接在弹出窗口中阅读、存档、标记已读或删除邮件（此选项也可关闭，程序将直接引导您前往Gmail网页进行相关操作）&lt;/li&gt;
+&lt;li&gt;当收到新邮件时，获得桌面音效或语音通知。（您甚至可以录制自己的语音通知）&lt;/li&gt;
+&lt;li&gt;支持Gmail和Google企业应用服务帐户的多重登录功能&lt;/li&gt;
+&lt;li&gt;您可以选择使用Gmail打开所有mailto链接，取代常用的邮件客户端。&lt;/li&gt;
+&lt;li&gt;扩展图标有10多种式样供您选择！&lt;/li&gt;
+&lt;li&gt;您可以为扩展程序添加新的语音引擎来朗读邮件&lt;/li&gt;
+&lt;li&gt;最重要的是，您拥有了最快的方式来&amp;quot;清除&amp;quot;收件箱中的未读邮件！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;editthiscookie&#34;&gt;EditThisCookie&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;EditThisCookie是一个cookie管理器。您可以添加，删除，编辑，搜索，锁定和屏蔽cookies！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;特性：&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;★ 编辑cookies&lt;/li&gt;
+&lt;li&gt;★ 删除cookies&lt;/li&gt;
+&lt;li&gt;★ 添加一个新的cookie&lt;/li&gt;
+&lt;li&gt;★ 创建cookies&lt;/li&gt;
+&lt;li&gt;★ 搜索cookies&lt;/li&gt;
+&lt;li&gt;★ 保护cookies (只读cookies)&lt;/li&gt;
+&lt;li&gt;★ 拦截cookies (cookie 过滤器)&lt;/li&gt;
+&lt;li&gt;★ 导出cookies为JSON, Netscape cookie 文档 (非常适合wget及curl), Perl::LPW&lt;/li&gt;
+&lt;li&gt;★ 导入JSON格式cookies&lt;/li&gt;
+&lt;li&gt;★ 限制任何cookie的最大有效期&lt;/li&gt;
+&lt;li&gt;★ 改进性能，移除旧的cookies&lt;/li&gt;
+&lt;li&gt;★ 导入cookies.txt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;enhanced-github&#34;&gt;Enhanced GitHub&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;显示仓库大小，每个文件的大小，下载链接和复制文件内容的选项&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;特征：&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;显示仓库大小&lt;/li&gt;
+&lt;li&gt;显示每个活动分支中的每个文件大小（不适用于文件夹/符号链接）&lt;/li&gt;
+&lt;li&gt;显示每个文件的下载链接（不适用于文件夹/符号链接）&lt;/li&gt;
+&lt;li&gt;将文件内容直接复制到剪贴板（对于markdown文件不起作用）&lt;/li&gt;
+&lt;li&gt;在查看文件内容的同时下载文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/enhanced-github/anlikcnbgdeidpacdbdljnabclhahhmd&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;fehelperjson&#34;&gt;FeHelper.JSON&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;JSON自动格式化、手动格式化，支持排序、解码、下载等，更多功能可在配置页动态安装！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/fehelperjson/pkgccpejnmalmdinmhkkfafefagiiiad&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;git-history-browser-extension&#34;&gt;Git History Browser Extension&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;向github添加按钮以查看文件历史记录&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/git-history-browser-exten/laghnmifffncfonaoffcndocllegejnf&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;hitup-find-top-things&#34;&gt;HitUP - Find Top Things&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;在新标签页中显示重要内容，例如GitHub仓库趋势等&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/hitup-find-top-things/eiokaohkigpbonodjcbjpecbnccijkjb&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;octotree&#34;&gt;Octotree&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;特征：&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;易于浏览的代码树，就像在IDE中一样&lt;/li&gt;
+&lt;li&gt;使用pjax快速浏览文件&lt;/li&gt;
+&lt;li&gt;显示拉取请求更改&lt;/li&gt;
+&lt;li&gt;支持私有仓库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;专业功能（要求登录帐户和/或在https://www.octotree.io/上订阅）:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;增强的代码审查功能&lt;/li&gt;
+&lt;li&gt;多种语法主题支持&lt;/li&gt;
+&lt;li&gt;查看整个拉取请求已更改的文件&lt;/li&gt;
+&lt;li&gt;拉取请求，仓库，发布和文件书签&lt;/li&gt;
+&lt;li&gt;仓库缓存（提高大型仓库的性能）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;rsshub-radar&#34;&gt;RSSHub Radar&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;RSSHub Radar 是 RSSHub 的衍生项目，她可以帮助你快速发现和订阅当前网站的 RSS 和 RSSHub&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/rsshub-radar/kefjpfngnndepjbopdmoebkipbgkggaa&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;standardized-screenshot&#34;&gt;Standardized Screenshot&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;标准化的屏幕截图&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/standardized-screenshot/pabdhaakclnechgfhmnhkcbmjobeoope&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;新浪微博图床&#34;&gt;新浪微博图床&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;简单好用的新浪微博图床,支持选择/拖拽/粘贴上传图片,并生成图片地址,HTML,UBB和Markdown等格式,支持浏览和删除历史记录&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;特征：&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持点选/拖拽/本地粘贴3种方式上传图片至新浪微博图床&lt;/li&gt;
+&lt;li&gt;支持批量上传&lt;/li&gt;
+&lt;li&gt;支持生成图片地址,HTML,UBB和Markdown四种格式&lt;/li&gt;
+&lt;li&gt;支持本地保存和删除上传历史&lt;/li&gt;
+&lt;li&gt;支持在常用在线markdown编辑器中使用ctrl+v粘贴图片，图片自动上传到微博图床。(目前已支持github，csdn及zybuluo的markdown在线编辑器)&lt;/li&gt;
+&lt;li&gt;支持https模式&lt;/li&gt;
+&lt;li&gt;支持自定义Chrome菜单栏图标&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;aria2-for-chrome&#34;&gt;Aria2 for Chrome&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Aria2 Web UI 支持手动添加和自动拦截下载任务到Aria2。（分叉自YAAW）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/aria2-for-chrome/mpkodccbngfoacfalldjimigbofkhgjn&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;autojoin-for-steamgifts&#34;&gt;AutoJoin for SteamGifts&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Steamgifts.com自动加入抽奖和网站增强工具&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;功能特色：&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自动加入抽奖&lt;/li&gt;
+&lt;li&gt;无限滚动&lt;/li&gt;
+&lt;li&gt;在首页添加加入和退出抽奖按钮&lt;/li&gt;
+&lt;li&gt;改善隐藏抽奖&lt;/li&gt;
+&lt;li&gt;隐藏所有DLC抽奖&lt;/li&gt;
+&lt;li&gt;夜间主题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/autojoin-for-steamgifts/bchhlccjhoedhhegglilngpbnldfcidc&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;steam-database&#34;&gt;Steam Database&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;在Steam社区和商店中添加Steam数据库链接和新功能&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;特征：&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在Steam站点之间添加到SteamDB的链接&lt;/li&gt;
+&lt;li&gt;在商店页面上显示史低价格&lt;/li&gt;
+&lt;li&gt;在游戏页面上显示在线统计&lt;/li&gt;
+&lt;li&gt;库存中的快速出售按钮&lt;/li&gt;
+&lt;li&gt;在商店跳过年龄检查&lt;/li&gt;
+&lt;li&gt;自动接受市场交易&lt;/li&gt;
+&lt;li&gt;删除链接过滤器链接&lt;/li&gt;
+&lt;li&gt;在steamdb.info上突出显示您拥有的游戏，DLC和软件包&lt;/li&gt;
+&lt;li&gt;其他许多较小的调整和功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/steam-database/kdbmhfkmnlmbkgbabkdealhhbfhlmmon&#34;&gt;安装链接&lt;/a&gt;&lt;/p&gt;
+">Chrome插件推荐</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://gridea.hclonely.com/post/4b4a0e66/"" data-c="
+          &lt;p&gt;&lt;strong&gt;Aria2是没有图形界面的，这里介绍几款WebUI界面。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;webui-aria2&#34;&gt;WebUI-Aria2&lt;/h2&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/old/joDMRI.webp&#34; alt=&#34;WebUI-Aria2&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;使用方法&#34;&gt;使用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;运行Aria2并开启RPC模式(配置文件中开启)&lt;/li&gt;
+&lt;li&gt;打开&lt;a href=&#34;https://aria2.hclonely.com/WebUI-Aria2/index.html&#34;&gt;Demo网址&lt;/a&gt;或自己搭建的网址&lt;/li&gt;
+&lt;li&gt;点击“设置”→“链接设置”配置好Aria2 RPC 主机和端口并保存&lt;/li&gt;
+&lt;li&gt;右上角提示“通过 RPC 连接到 Aria2 成功！”就可以了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;搭建到本地或服务器&#34;&gt;搭建到本地或服务器&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载源码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ziahamza/webui-aria2&#34;&gt;GitHub官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aria2.hclonely.com/download/WebUI-Aria2.zip&#34;&gt;备用下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将下载的压缩文件里的docs文件夹解压到本地或服务器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;搭建到本地的话直接浏览器打开docs文件夹里的index.html即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;搭建到服务器的话根据你解压的目录打开相应的网址即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;ariang&#34;&gt;AriaNg&lt;/h2&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/old/eUyzCN.webp&#34; alt=&#34;AriaNg&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;使用方法-2&#34;&gt;使用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;运行Aria2并开启RPC模式(配置文件中开启)&lt;/li&gt;
+&lt;li&gt;打开&lt;a href=&#34;https://aria2.hclonely.com/AriaNg/index.html&#34;&gt;Demo网址&lt;/a&gt;或自己搭建的网址&lt;/li&gt;
+&lt;li&gt;点击“AriaNg 设置”→“RPC(******:6800)”配置好Aria2 RPC 主机和端口并保存&lt;/li&gt;
+&lt;li&gt;右上角提示“localhost:6800连接成功”就可以了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;搭建到本地或服务器-2&#34;&gt;搭建到本地或服务器&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载releases（本地搭建建议下载&amp;quot;AllInOne&amp;quot;版本）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mayswind/AriaNg/releases&#34;&gt;GitHub官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aria2.hclonely.com/download/AriaNg.zip&#34;&gt;备用下载1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aria2.hclonely.com/download/AriaNg-AllInOne.zip&#34;&gt;备用下载2(AllInOne)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将下载的压缩文件解压到本地或服务器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;搭建到本地的话直接浏览器打开&amp;quot;index.html&amp;quot;即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;搭建到服务器的话根据你解压的目录打开相应的网址即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;yaaw&#34;&gt;YAAW&lt;/h2&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/old/jqMOPs.webp&#34; alt=&#34;YAAW&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;使用方法-3&#34;&gt;使用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;运行Aria2并开启RPC模式(配置文件中开启)&lt;/li&gt;
+&lt;li&gt;打开&lt;a href=&#34;https://aria2.hclonely.com/yaaw/index.html&#34;&gt;Demo网址&lt;/a&gt;或自己搭建的网址；&lt;/li&gt;
+&lt;li&gt;点击右上角“?”配置好Aria2 RPC 主机和端口并保存（不支持RPC密钥）&lt;/li&gt;
+&lt;li&gt;提示“Saved!”就可以了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;搭建到本地或服务器-3&#34;&gt;搭建到本地或服务器&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载源码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ghostry/yaaw&#34;&gt;GitHub官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aria2.hclonely.com/download/yaaw.zip&#34;&gt;备用下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将下载的压缩文件解压到本地或服务器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;搭建到本地的话直接浏览器打开&amp;quot;index.html&amp;quot;即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;搭建到服务器的话根据你解压的目录打开相应的网址即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;photon-webui&#34;&gt;Photon-WebUI&lt;/h2&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/old/N1MlhE.webp&#34; alt=&#34;Photon-WebUI&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;使用方法-4&#34;&gt;使用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;运行Aria2并开启RPC模式(配置文件中开启)&lt;/li&gt;
+&lt;li&gt;打开&lt;a href=&#34;https://aria2.hclonely.com/Photon-WebUI/index.html&#34;&gt;Demo网址&lt;/a&gt;或自己搭建的网址&lt;/li&gt;
+&lt;li&gt;点击“设置”配置好Aria2 RPC 主机和端口&lt;/li&gt;
+&lt;li&gt;状态显示“已连接”就可以了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;搭建到本地或服务器-4&#34;&gt;搭建到本地或服务器&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载源码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/alanzhangzm/Photon-WebUI&#34;&gt;GitHub官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://aria2.hclonely.com/download/Photon-WebUI-0.2.0.zip&#34;&gt;备用下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将下载的压缩文件里的”docs”文件夹解压到本地或服务器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;搭建到本地的话直接浏览器打开”docs”文件夹里的”index.html”即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;搭建到服务器的话根据你解压的目录打开相应的网址即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+">Aria2 WebUI界面搭建</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://gridea.hclonely.com/post/c733a53b/"" data-c="
+          &lt;h2 id=&#34;关于owncloud&#34;&gt;关于ownCloud&lt;/h2&gt;
+&lt;p&gt;  ownCloud是一个开源免费专业的私有云存储项目，它能帮你快速在个人电脑或服务器上架设一套专属的私有云文件同步网盘，可以像 百度云那样实现文件跨平台同步、共享、版本控制、团队协作等等。ownCloud 能让你将所有的文件掌握在自己的手中，只要你的设备性能和空间充足，那么用起来几乎没有任何限制。&lt;br&gt;
+  ownCloud支持 &lt;em&gt;Windows&lt;/em&gt;、&lt;em&gt;Mac&lt;/em&gt;、&lt;em&gt;Android&lt;/em&gt;、&lt;em&gt;iOS&lt;/em&gt;、&lt;em&gt;Linux&lt;/em&gt; 等平台，而且还提供了网页版和 WebDAV 形式访问，因此你可以在任何电脑、手机上都能轻松获取你的文件。&lt;br&gt;
+  本篇文章主要介绍了如何在LNMP环境下搭建ownCloud.&lt;/p&gt;
+&lt;h2 id=&#34;需求环境括号内为博主使用的环境基于宝塔面板安装&#34;&gt;需求环境(括号内为博主使用的环境，基于宝塔面板安装)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;系统: CentOS Linux 7+(CentOS Linux 7.2.1511 64bit)&lt;/li&gt;
+&lt;li&gt;web服务器: Nginx 1.16+(Nginx 1.16.1)&lt;/li&gt;
+&lt;li&gt;数据库: MySQL 5.5+(MySQL 5.5.62)&lt;/li&gt;
+&lt;li&gt;PHP: 5.6&amp;lt;PHP&amp;lt;7.3(PHP 7.2)
+&lt;ul&gt;
+&lt;li&gt;额外PHP扩展(括号内为建议安装):acpu,redis,fileinfo(opcache,memcache,memcached)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装owncloud&#34;&gt;安装ownCloud&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;安装&lt;em&gt;dnf&lt;/em&gt;包(系统内已安装可跳过此步骤):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;yum install dnf&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装&lt;em&gt;dnf config-manager&lt;/em&gt;命令(系统内已安装可跳过此步骤):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dnf install &#39;dnf-command(config-manager)&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;添加新的ownCloud软件源:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rpm --import https://download.owncloud.org/download/repositories/production/CentOS_7/repodata/repomd.xml.key&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装ownCloud-files:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;dnf config-manager --add-repo  http://download.owncloud.org/download/repositories/production/CentOS_7/ce:stable.repo
+dnf clean all
+dnf install owncloud-files
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;检查是否安装成功:&lt;/p&gt;
+&lt;p&gt;如果&lt;code&gt;/var/www/html&lt;/code&gt;文件夹内有&lt;code&gt;owncloud&lt;/code&gt;文件夹，说明安装成功。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;修改根目录(可选)&lt;/p&gt;
+&lt;p&gt;直接复制&lt;code&gt;owncloud&lt;/code&gt;文件夹到目标文件夹即可(&lt;strong&gt;要保留一份后面可能会用到&lt;/strong&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;添加网站&#34;&gt;添加网站&lt;/h2&gt;
+&lt;p&gt;将网站根目录指向&lt;code&gt;.../owncloud&lt;/code&gt;即可:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;server
+{
+    listen 80;
+    server_name 你的服务器ip或域名;
+    index index.php index.html index.htm default.php default.htm default.html;
+    root .../owncloud/;
+
+    #SSL-START SSL相关配置，请勿删除或修改下一行带注释的404规则
+    #error_page 404/404.html;
+    #SSL-END
+
+    #ERROR-PAGE-START  错误页配置，可以注释、删除或修改
+    #error_page 404 /404.html;
+    #error_page 502 /502.html;
+    #ERROR-PAGE-END
+
+    #PHP-INFO-START  PHP引用配置，可以注释或修改
+    include enable-php-72.conf;
+    #PHP-INFO-END
+
+    #REWRITE-START URL重写规则引用,修改后将导致面板设置的伪静态规则失效
+    include /www/server/panel/vhost/rewrite/your.conf;
+    #REWRITE-END
+
+    #禁止访问的文件或目录
+    location ~ ^/(\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md)
+    {
+        return 404;
+    }
+
+    #防盗链配置
+    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
+    {
+        expires      30d;
+        error_log off;
+        access_log /dev/null;
+    }
+    location ~ .*\.(js|css)?$
+    {
+        expires      12h;
+        error_log off;
+        access_log /dev/null;
+    }
+    access_log  /www/wwwlogs/your.log;
+    error_log  /www/wwwlogs/your.error.log;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;创建数据库&#34;&gt;创建数据库&lt;/h2&gt;
+&lt;p&gt;创建数据库并记住数&lt;code&gt;据库名&lt;/code&gt;,&lt;code&gt;用户名&lt;/code&gt;,&lt;code&gt;密码&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;配置数据库及管理员帐号&#34;&gt;配置数据库及管理员帐号&lt;/h2&gt;
+&lt;p&gt;访问你的网站(ip或域名)看到如下内容(报错请给根目录&amp;quot;775&amp;quot;或&amp;quot;777&amp;quot;权限):&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/old/006brDXlly1g7ldu7hya4j31460l0hcf.webp&#34; alt=&#34;初次访问&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;输入管理员帐号密码(需要记住)&lt;/li&gt;
+&lt;li&gt;数据目录可不修改&lt;/li&gt;
+&lt;li&gt;数据库选择&lt;em&gt;MySQL/MariaDB&lt;/em&gt;并输入数据库名、帐号、密码、主机名及端口号(默认localhost:3306)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;填完上述内容后点击安装完成可看到如下内容:&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/old/006brDXlly1g7ldzu1721j31460l01kx.webp&#34; alt=&#34;登录&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;输入之前输入的&lt;strong&gt;管理员帐号密码&lt;/strong&gt;登录即可。&lt;/p&gt;
+&lt;h2 id=&#34;安全及设置警告&#34;&gt;安全及设置警告&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;PHP 似乎没有设置好查询的系统环境变量。 用 getenv(&amp;quot;PATH&amp;quot;) 测试只返回一个空值。请检查 PHP 配置说明和服务器的 PHP 配置 安装文档 ↗，使用 PHP-FPM 时尤其注意。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;找到&lt;code&gt;/www/server/php/72/etc&lt;/code&gt;目录，编辑&lt;code&gt;php-fpm.conf&lt;/code&gt;文件，找到如下内容(没有则添加如下内容)&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;;env[HOSTNAME] = $HOSTNAME
+;env[PATH] = /usr/local/bin:/usr/bin:/bin
+;env[TMP] = /tmp
+;env[TMPDIR] = /tmp
+;env[TEMP] = /tmp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;去掉前面的&#39;;&#39;并保存。&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;事务文件锁定应配置为使用基于内存的锁定，而不是默认的基于慢速数据库的锁定。有关详细信息，请参阅 文档 ↗。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;编辑&lt;code&gt;.../owncloud/config/&lt;/code&gt;目录下的&lt;code&gt;config.php&lt;/code&gt;文件，添加如下内容(需安装前面提到的额外PHP扩展)：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&#39;memcache.local&#39; =&amp;gt; &#39;\\OC\\Memcache\\APCu&#39;,
+&#39;memcache.locking&#39; =&amp;gt; &#39;\\OC\\Memcache\\Redis&#39;,
+&#39;redis&#39; =&amp;gt;
+array (
+  &#39;host&#39; =&amp;gt; &#39;localhost&#39;,
+  &#39;port&#39; =&amp;gt; 6379,
+),
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;保存即可。&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我们建议启用系统 cron，任何其他 cron 方法可能对性能和可靠性有影响。&lt;/p&gt;
+&lt;p&gt;添加计划任务:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;任务类型:Shell脚本&lt;/li&gt;
+&lt;li&gt;任务名称:随便取一个&lt;/li&gt;
+&lt;li&gt;执行周期:N分钟 15分&lt;/li&gt;
+&lt;li&gt;脚本内容:&lt;code&gt;sudo -u www /www/server/php/72/bin/php -f .../owncloud/cron.php&lt;/code&gt;&lt;strong&gt;(&amp;quot;...&amp;quot;要根据自己的实际情况修改)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;设置中计划任务改为&lt;code&gt;Cron&lt;/code&gt;&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/old/006brDXlly1g7lf0g13exj31460l00us.webp&#34; alt=&#34;计划任务&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;您正在通过 HTTP 访问该站点，我们强烈建议您按照安全提示配置服务器强制使用 HTTPS。&lt;/p&gt;
+&lt;p&gt;给网站配置SSL证书，启用HTTPS即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HTTP 严格传输安全（Strict-Transport-Security）报头未配置到至少“15552000”秒。处于增强安全性考虑，我们推荐按照安全提示启用 HSTS。&lt;/p&gt;
+&lt;p&gt;编辑网站配置文件，添加如下代码:&lt;br&gt;
+&lt;code&gt;add_header Strict-Transport-Security &amp;quot;max-age=63072000; includeSubdomains; preload&amp;quot;;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你的数据目录和你的文件可能从互联网被访问到。.htaccess 文件不工作。我们强烈建议你配置你的网页服务器，使数据目录不再可访问，或者将数据目录移动到网页服务器根文档目录之外。&lt;/p&gt;
+&lt;p&gt;编辑网站配置文件，添加如下代码:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;location ~ ^/(data|config|\.ht|db_structure\.xml|README) {
+    deny all;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PHP 无法访问 /dev/urandom, 由于安全原因, 这是强烈不推荐的.&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;.../owncloud&lt;/code&gt;目录下的&lt;code&gt;.user.ini&lt;/code&gt;文件，改为如下内容:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-ini&#34;&gt;upload_max_filesize=513M
+post_max_size=513M
+memory_limit=512M
+mbstring.func_overload=0
+always_populate_raw_post_data=-1
+default_charset=&#39;UTF-8&#39;
+output_buffering=0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一些文件没有通过完整性检查。如何解决此问题的详细信息可以查看我们的 文档. (无效文件列表… / 重新扫描…)&lt;/p&gt;
+&lt;p&gt;跟之前保留的&lt;code&gt;owncloud&lt;/code&gt;文件夹里的内容比较一下，看看有哪些文件不同替换过来就行(&lt;strong&gt;注意隐藏文件&lt;/strong&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;邮箱配置&#34;&gt;邮箱配置&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;在&lt;code&gt;设置 &amp;gt; 个人 &amp;gt; 常规&lt;/code&gt;中设置好管理员邮箱地址并保存&lt;/li&gt;
+&lt;li&gt;按下图配置好&lt;strong&gt;电子邮件服务器&lt;/strong&gt;(以QQ邮箱为例，&lt;strong&gt;不要和上面使用同一个邮箱&lt;/strong&gt;)&lt;a href=&#34;https://www.baidu.com/s?ie=utf-8&amp;amp;f=3&amp;amp;rsv_bp=1&amp;amp;ch=&amp;amp;tn=baidu&amp;amp;bar=&amp;amp;wd=qq%E9%82%AE%E7%AE%B1smtp%E8%AE%BE%E7%BD%AE&amp;amp;oq=smtp%25E8%25AE%25BE%25E7%25BD%25AE&amp;amp;rsv_pq=9a0979000000eac7&amp;amp;rsv_t=f83a3KFhWkpW6TId%2FD2Iw5tyFH5uV0QQiVmc%2FNTC0kVZ3KZoC%2BSrhsjUJsY&amp;amp;rqlang=cn&amp;amp;rsv_enter=1&amp;amp;prefixsug=smtp%25E8%25AE%25BE%25E7%25BD%25AE&amp;amp;rsp=2&amp;amp;rsv_dl=ts_2&#34;&gt;如何配置？&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/old/006brDXlly1g7lz7j7bk5j31460l0766.webp&#34; alt=&#34;邮箱配置&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;配置完成后点击下面的***发送邮件***发送测试邮件，如果之前设置的管理员邮箱可以收到测试邮件说明配置成功。&lt;/li&gt;
+&lt;/ul&gt;
+">Linux ownCloud私有云搭建</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://gridea.hclonely.com/post/b9ab9265/"" data-c="
+          &lt;p&gt;&lt;strong&gt;这里来介绍一下linux系统下aria2的安装与配置&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ubuntu&#34;&gt;Ubuntu&lt;/h2&gt;
+&lt;p&gt;ubuntu的用户可以直接使用下面命令完成aria2的安装:&lt;br&gt;
+&lt;code&gt;sudo apt-get install aria2&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;centos&#34;&gt;CentOS&lt;/h2&gt;
+&lt;h3 id=&#34;下载&#34;&gt;下载&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;到githup上获取源码：&lt;a href=&#34;https://github.com/aria2/aria2/releases&#34;&gt;https://github.com/aria2/aria2/releases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hclonely-cdn.oss-cn-hongkong.aliyuncs.com/aria2-1.35.0.tar.gz&#34;&gt;备用下载&lt;/a&gt;&lt;br&gt;
+我使用的是这个版本:&lt;br&gt;
+&lt;a href=&#34;https://github.com/aria2/aria2/releases/download/release-1.35.0/aria2-1.35.0.tar.gz&#34;&gt;https://github.com/aria2/aria2/releases/download/release-1.35.0/aria2-1.35.0.tar.gz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;定位到aria2目录并输入以下命令下载:&lt;br&gt;
+&lt;code&gt;cd /ssd/aria2 &amp;amp;&amp;amp; wget https://github.com/aria2/aria2/releases/download/release-1.35.0/aria2-1.35.0.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;升级gcc&#34;&gt;升级gcc&lt;/h3&gt;
+&lt;p&gt;编译aria2需要升级一下gcc，最低要求 gcc &amp;gt;= 4.8.2，使用&lt;code&gt;gcc --version&lt;/code&gt;查看当前gcc版本，&lt;strong&gt;如果你的gcc已经在符合这个要求就可以跳到下一步了&lt;/strong&gt;&lt;br&gt;
+复制下面代码，保存为：update_gcc.sh&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 添加一个源
+cd /etc/yum.repos.d
+wget http://people.centos.org/tru/devtools-2/devtools-2.repo
+# 安装所需包
+yum install devtoolset-2-gcc devtoolset-2-binutils devtoolset-2-gcc-c++
+# 保存原来的版本
+mv /usr/bin/gcc /usr/bin/gcc-4.4.7
+mv /usr/bin/g++ /usr/bin/g++-4.4.7
+mv /usr/bin/c++ /usr/bin/c++-4.4.7
+# 链接到新版本的gcc
+ln -s /opt/rh/devtoolset-2/root/usr/bin/gcc /usr/bin/gcc
+ln -s /opt/rh/devtoolset-2/root/usr/bin/c++ /usr/bin/c++
+ln -s /opt/rh/devtoolset-2/root/usr/bin/g++ /usr/bin/g++
+# 查看当前gcc版本
+gcc --version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;给予update_gcc.sh文件可执行权限并执行&lt;br&gt;
+&lt;code&gt;chmod 754 update_gcc.sh &amp;amp;&amp;amp; ./update_gcc.sh&lt;/code&gt;&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;在执行之前需要确保安装了wget，如果没有wget的话，脚本执行会报错!!!&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+等待完成!!!&lt;/p&gt;
+&lt;h3 id=&#34;解压并开始编译安装&#34;&gt;解压并开始编译安装&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;tar zxvf aria2-1.34.0.tar.gz &amp;amp;&amp;amp; cd aria2-1.34.0 &amp;amp;&amp;amp; mkdir build &amp;amp;&amp;amp; cd build &amp;amp;&amp;amp; ../configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; make install&lt;/code&gt;&lt;br&gt;
+&lt;em&gt;比较长时间的等待~~&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;创建目录与配置文件&#34;&gt;创建目录与配置文件&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 这一步需要切换到root下进行 
+# 需要 su  一下
+cd /ssd/www &amp;amp;&amp;amp; mkdir aria2 &amp;amp;&amp;amp; cd aria2 &amp;amp;&amp;amp; touch aria2.conf &amp;amp;&amp;amp; touch aria2.session
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编辑aria2.conf文件内容，内容如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置
+#dir=~/download
+# 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M
+disk-cache=5M
+# 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc
+# 预分配所需时间: none &amp;lt; falloc ? trunc &amp;lt; prealloc
+# falloc和trunc则需要文件系统和内核支持, NTFS建议使用falloc, EXT3/4建议trunc
+file-allocation=none
+# 断点续传
+continue=true
+## 下载连接相关 ##
+# 最大同时下载任务数, 运行时可修改, 默认:5
+max-concurrent-downloads=5
+# 同一服务器连接数, 添加时可指定, 默认:1
+max-connection-per-server=15
+# 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M
+# 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载
+min-split-size=10M
+# 单个任务最大线程数, 添加时可指定, 默认:5
+split=5
+# 整体下载速度限制, 运行时可修改, 默认:0
+#max-overall-download-limit=0
+# 单个任务下载速度限制, 默认:0
+#max-download-limit=0
+# 整体上传速度限制, 运行时可修改, 默认:0
+max-overall-upload-limit=20kb
+# 单个任务上传速度限制, 默认:0
+max-upload-limit=5kb
+# 禁用IPv6, 默认:false
+disable-ipv6=true
+# 禁用https证书检查
+check-certificate=false
+#运行覆盖已存在文件
+allow-overwrite=true
+#自动重命名
+auto-file-renaming
+## 进度保存相关 ##
+# 从会话文件中读取下载任务
+input-file=/etc/aria2/aria2.session
+# 在Aria2退出时保存`错误/未完成`的下载任务到会话文件
+save-session=/etc/aria2/aria2.session
+# 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0
+save-session-interval=30
+## RPC相关设置 ##
+# 启用RPC, 默认:false
+enable-rpc=true
+# 允许所有来源, 默认:false
+rpc-allow-origin-all=true
+# 允许非外部访问, 默认:false
+rpc-listen-all=true
+# 事件轮询方式, 取值:[epoll, kqueue, port, poll, select], 不同系统默认值不同
+#event-poll=select
+# RPC监听端口, 端口被占用时可以修改, 默认:6800
+rpc-listen-port=6800
+# 保存上传的种子文件
+rpc-save-upload-metadata=false
+## BT/PT下载相关 ##
+# 当下载的是一个种子(以.torrent结尾)时, 自动开始BT任务, 默认:true
+#follow-torrent=true
+# BT监听端口, 当端口被屏蔽时使用, 默认:6881-6999
+listen-port=51413
+# 单个种子最大连接数, 默认:55
+#bt-max-peers=55
+# 打开DHT功能, PT需要禁用, 默认:true
+enable-dht=true
+# 打开IPv6 DHT功能, PT需要禁用
+enable-dht6=false
+# DHT网络监听端口, 默认:6881-6999
+#dht-listen-port=6881-6999
+# 本地节点查找, PT需要禁用, 默认:false
+bt-enable-lpd=true
+# 种子交换, PT需要禁用, 默认:true
+enable-peer-exchange=true
+# 每个种子限速, 对少种的PT很有用, 默认:50K
+#bt-request-peer-speed-limit=50K
+# 客户端伪装, PT需要
+peer-id-prefix=-UT341-
+user-agent=uTorrent/341(109279400)(30888)
+# 当种子的分享率达到这个数时, 自动停止做种, 0为一直做种, 默认:1.0
+seed-ratio=1.0
+# 强制保存会话, 话即使任务已经完成, 默认:false
+# 较新的版本开启后会在任务完成后依然保留.aria2文件
+#force-save=false
+# BT校验相关, 默认:true
+#bt-hash-check-seed=true
+# 继续之前的BT任务时, 无需再次校验, 默认:false
+bt-seed-unverified=true
+# 保存磁力链接元数据为种子文件(.torrent文件), 默认:false
+#bt-save-metadata=false
+#仅下载种子文件
+bt-metadata-only=true
+#通过网上的种子文件下载，种子保存在内存
+follow-torrent=mem
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;设置环境变量&#34;&gt;设置环境变量&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;编辑~/.bashrc文件,加入下面内容&lt;br&gt;
+&lt;code&gt;export PATH=/usr/local/src/aria2-1.33.0/build/src:$PATH&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;执行下面命令，使环境变量设置生效：&lt;br&gt;
+&lt;code&gt;source ~/.bashrc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;完成这一系列操作后，输入 aria  并可以补全的话就说明aria2已经安装成功了!!!&lt;br&gt;
+然后，你就可以使用aria2下载你的bt种子或磁力链了，执行&lt;code&gt;aria2c -h&lt;/code&gt;查看&lt;strong&gt;使用说明&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;处理aria2下载bt种子或磁力链无速度或速度慢的情况添加tracker&#34;&gt;处理aria2下载bt种子或磁力链无速度或速度慢的情况，添加tracker&lt;/h3&gt;
+&lt;p&gt;在aria2c.conf文件中添加下面内容:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;bt-tracker=tracker url.....
+例如:
+bt-tracker=udp://tracker.coppersurfer.tk:6969/announce,udp://tracker.open-internet.nl:6969/announce,udp://tracker.leechers-paradise.org:6969/announce,udp://tracker.opentrackr.org:1337/announce,http://tracker.internetwarriors.net:1337/announce,udp://9.rarbg.to:2710/announce,udp://exodus.desync.com:6969/announce,http://tracker3.itzmx.com:6961/announce,udp://explodie.org:6969/announce,udp://ipv4.tracker.harry.lu:80/announce,udp://denis.stalker.upeer.me:6969/announce,udp://tracker4.itzmx.com:2710/announce,udp://tracker.tiny-vps.com:6969/announce,udp://tracker.port443.xyz:6969/announce,udp://thetracker.org:80/announce,udp://open.stealth.si:80/announce,udp://open.demonii.si:1337/announce,udp://bt.xxx-tracker.com:2710/announce,udp://tracker1.wasabii.com.tw:6969/announce,udp://tracker.torrent.eu.org:451/announce
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;tracker 地址自行到这里取最新的添加，每个地址之间以逗号分开:&lt;br&gt;
+&lt;a href=&#34;https://github.com/ngosang/trackerslist&#34;&gt;https://github.com/ngosang/trackerslist&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;使用以下命令后台启动&#34;&gt;使用以下命令后台启动:&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;aria2c --conf-path=/ssd/www/aria2/aria2.conf -D&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文转自 &lt;a href=&#34;https://www.cnblogs.com/LiQingsong/p/10293142.html&#34;&gt;linux下aria2的安装与配置&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+">linux下aria2的安装与配置</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://gridea.hclonely.com/post/f096f3bc/"" data-c="
+          &lt;p&gt;&lt;strong&gt;需求: Linux新增加一块硬盘sdb，将sdb分区，只分一个区，格式化，挂载到目录/ssd下。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;查看现在已有的分区状态&#34;&gt;查看现在已有的分区状态&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;# df -l&lt;/code&gt;&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/old/006brDXlly1g6za4jlnj0j30fi03kmxo.webp&#34; alt=&#34;分区状态&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;图中显示，没有看到sdb硬盘&lt;/p&gt;
+&lt;h2 id=&#34;查看服务器安装的硬盘状态包括格式化和未格式化&#34;&gt;查看服务器安装的硬盘状态（包括格式化和未格式化）&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;# fdisk -l&lt;/code&gt;&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/old/006brDXlly1g6za5t76eqj30fi0cgdi4.webp&#34; alt=&#34;硬盘状态&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;图中显示，有sdb硬盘，但是没有分区。&lt;/p&gt;
+&lt;h2 id=&#34;添加新分区&#34;&gt;添加新分区&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;# fdisk /dev/sdb&lt;/code&gt;&lt;br&gt;
+按照以下红框输入&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;N&lt;/kbd&gt; → &lt;kbd&gt;Enter&lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;P&lt;/kbd&gt; → &lt;kbd&gt;Enter&lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;1&lt;/kbd&gt; → &lt;kbd&gt;Enter&lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;Enter&lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;Enter&lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;W&lt;/kbd&gt; → &lt;kbd&gt;Enter&lt;/kbd&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/old/006brDXlly1g6za9rpt8kj30fi057gm5.webp&#34; alt=&#34;添加新分区&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;用以下命令查看分区&lt;br&gt;
+&lt;code&gt;# fdisk -l&lt;/code&gt;&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/old/006brDXlly1g6zaacq8drj30fi0500tl.webp&#34; alt=&#34;分区&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;图中红框显示已多出了一个分区，但是还没有格式化。&lt;/p&gt;
+&lt;h2 id=&#34;格式化分区&#34;&gt;格式化分区&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;# mkfs -t ext4 -c /dev/sdb1&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-t&lt;/code&gt; 制定要把磁盘格式化成什么类型&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-c&lt;/code&gt; 在建立文件系统之前检查坏道，可能会很费时间，新硬盘一般不需要&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;5&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/old/006brDXlly1g6zabokpgpj30fi0b2mza.webp&#34; alt=&#34;格式化分区&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;挂载新硬盘&#34;&gt;挂载新硬盘&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;在根目录下，建一个文件夹，待会将分区挂载在这个文件夹上，以后要往新硬盘存东西就存在新建文件夹下就可以了。&lt;br&gt;
+&lt;code&gt;# mkdir /ssd&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;挂载硬盘&lt;br&gt;
+&lt;code&gt;# mount /dev/sdb1 /ssd&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;6&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/HCLonely/images@latest/post/old/006brDXlly1g6zad9p990j30fi02baab.webp&#34; alt=&#34;挂载硬盘&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;让系统开机自动挂载这块硬盘&#34;&gt;让系统开机自动挂载这块硬盘&lt;/h2&gt;
+&lt;p&gt;编辑&lt;code&gt;/etc/fstaba&lt;/code&gt;文件，在最末尾增加如下代码：&lt;br&gt;
+&lt;code&gt;/dev/sda1 /ssd ext4 defaults 0 0&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文转自 &lt;a href=&#34;https://www.cnblogs.com/ddbear/p/7009736.html&#34;&gt;linux 新添加的硬盘格式化并挂载到目录下&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+">Linux挂载硬盘</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://gridea.hclonely.com/post/5579cd4b/"" data-c="
+          &lt;p&gt;&lt;strong&gt;  Aria2 是一个多平台轻量级，支持 HTTP、FTP、BitTorrent 等多协议、多来源的命令行下载工具。Aria2 可以从多个来源、多个协议下载资源，最大的程度上利用了你的带宽。Aria2 有着非常小的资源占用，在关闭磁盘缓存的情况下，物理内存占用通常为 4M（正常 HTTP/FTP 下载的情况下），BitTorrent 下载每秒2.8M/S的情况下，CPU 占有率约为 6%。Aria2 支持 JSON-RPC 和 XML-RPC 接口远程调用。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装前准备文件&#34;&gt;安装前准备文件&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Aria2主程序：
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/aria2/aria2/releases&#34;&gt;官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hclonely-cdn.oss-cn-hongkong.aliyuncs.com/aria2-1.35.0-win-32bit-build1.zip&#34;&gt;备用下载(32位)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hclonely-cdn.oss-cn-hongkong.aliyuncs.com/aria2-1.35.0-win-64bit-build1.zip&#34;&gt;备用下载(64位)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Aria2配置文件：
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jasmine102/Aria2-config/raw/master/aria2_conf.zip&#34;&gt;官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hclonely-cdn.oss-cn-hongkong.aliyuncs.com/aria2_conf.zip&#34;&gt;备用下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Aria2控制脚本：
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jasmine102/Aria2-config/raw/master/aria2_bat.zip&#34;&gt;官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hclonely-cdn.oss-cn-hongkong.aliyuncs.com/aria2_bat.zip&#34;&gt;备用下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装步骤&#34;&gt;安装步骤&lt;/h2&gt;
+&lt;h3 id=&#34;将aria2主程序aria2配置文件和aria2控制脚本解压到同一目录&#34;&gt;将&lt;code&gt;Aria2主程序&lt;/code&gt;,&lt;code&gt;Aria2配置文件&lt;/code&gt;和&lt;code&gt;Aria2控制脚本&lt;/code&gt;解压到同一目录&lt;/h3&gt;
+&lt;h3 id=&#34;编辑aria2conf文件&#34;&gt;编辑&lt;code&gt;aria2.conf&lt;/code&gt;文件&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;ari2.conf&lt;/code&gt;里已自带默认参数 ，也可根据自己的需要设置&lt;code&gt;ari2.conf&lt;/code&gt;文件里的参数：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;## &#39;#&#39;开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ##
+## 被注释的选项填写的是默认值, 建议在需要修改时再取消注释  ##
+
+## 文件保存相关 ##
+
+# 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置
+dir=Download
+# 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M
+disk-cache=32M
+# 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc
+# 预分配所需时间: none &amp;lt; falloc &amp;lt; trunc &amp;lt; prealloc
+# NTFS建议使用falloc
+file-allocation=none
+# 断点续传
+continue=true
+
+## 下载连接相关 ##
+
+# 最大同时下载任务数, 运行时可修改, 默认:5
+max-concurrent-downloads=10
+# 同一服务器连接数, 添加时可指定, 默认:1
+max-connection-per-server=5
+# 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M
+# 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载
+min-split-size=10M
+# 单个任务最大线程数, 添加时可指定, 默认:5
+split=20
+# 整体下载速度限制, 运行时可修改, 默认:0
+#max-overall-download-limit=0
+# 单个任务下载速度限制, 默认:0
+#max-download-limit=0
+# 整体上传速度限制, 运行时可修改, 默认:0
+max-overall-upload-limit=1M
+# 单个任务上传速度限制, 默认:0
+#max-upload-limit=1000
+# 禁用IPv6, 默认:false
+disable-ipv6=false
+
+## 进度保存相关 ##
+
+# 从会话文件中读取下载任务
+input-file=aria2.session
+# 在Aria2退出时保存`错误/未完成`的下载任务到会话文件
+save-session=aria2.session
+# 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0
+#save-session-interval=60
+
+## RPC相关设置 ##
+
+# 启用RPC, 默认:false
+enable-rpc=true
+# 允许所有来源, 默认:false
+rpc-allow-origin-all=true
+# 允许非外部访问, 默认:false
+rpc-listen-all=true
+# 事件轮询方式, 取值:[epoll, kqueue, port, poll, select], 不同系统默认值不同
+#event-poll=select
+# RPC监听端口, 端口被占用时可以修改, 默认:6800
+#rpc-listen-port=6800
+# 设置的RPC授权令牌, v1.18.4新增功能, 取代 --rpc-user 和 --rpc-passwd 选项
+#rpc-secret=mivm.cn
+# 设置的RPC访问用户名, 此选项新版已废弃, 建议改用 --rpc-secret 选项
+#rpc-user=&amp;lt;USER&amp;gt;
+# 设置的RPC访问密码, 此选项新版已废弃, 建议改用 --rpc-secret 选项
+#rpc-passwd=&amp;lt;PASSWD&amp;gt;
+
+## BT/PT下载相关 ##
+
+# 当下载的是一个种子(以.torrent结尾)时, 自动开始BT任务, 默认:true
+follow-torrent=true
+# BT监听端口, 当端口被屏蔽时使用, 默认:6881-6999
+listen-port=51413
+# 单个种子最大连接数, 默认:55
+#bt-max-peers=55
+# 打开DHT功能, PT需要禁用, 默认:true
+enable-dht=true
+# 打开IPv6 DHT功能, PT需要禁用
+#enable-dht6=false
+# DHT网络监听端口, 默认:6881-6999
+#dht-listen-port=6881-6999
+# 本地节点查找, PT需要禁用, 默认:false
+#bt-enable-lpd=true
+# 种子交换, PT需要禁用, 默认:true
+enable-peer-exchange=true
+# 每个种子限速, 对少种的PT很有用, 默认:50K
+#bt-request-peer-speed-limit=50K
+# 客户端伪装, PT需要
+peer-id-prefix=-TR2770-
+user-agent=Transmission/2.77
+# 当种子的分享率达到这个数时, 自动停止做种, 0为一直做种, 默认:1.0
+seed-ratio=0.1
+# 强制保存会话, 即使任务已经完成, 默认:false
+# 较新的版本开启后会在任务完成后依然保留.aria2文件
+#force-save=false
+# BT校验相关, 默认:true
+#bt-hash-check-seed=true
+# 继续之前的BT任务时, 无需再次校验, 默认:false
+bt-seed-unverified=true
+# 保存磁力链接元数据为种子文件(.torrent文件), 默认:false
+#bt-save-metadata=true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;双击运行startbat前台运行或startvbs后台运行首次运行会弹出防火墙提示选择允许即可&#34;&gt;双击运行&lt;code&gt;Start.bat&lt;/code&gt;(前台运行)或&lt;code&gt;Start.vbs&lt;/code&gt;(后台运行)，首次运行会弹出防火墙提示，选择允许即可&lt;/h3&gt;
+&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub源码： &lt;a href=&#34;https://github.com/aria2/aria2&#34;&gt;https://github.com/aria2/aria2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;官方文档： &lt;a href=&#34;https://aria2.github.io/&#34;&gt;https://aria2.github.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+">Windows配置Aria2教程</a>
+      </div>
+      
+    </div>
+    <div class="page">
+      <div id="page_ul"></div>
+    </div>
+  </div>
+</div>
+<script>
+  !function () {
+    let searchMask = document.querySelector('#search_mask');
+    let result = document.querySelector('#result');
+    let items = document.querySelectorAll('.item');
+    let searchBox = document.querySelector('#search');
+    let statCount = document.querySelector('#stat_count');
+    let statTimes = document.querySelector('#stat_times');
+    let pageUl = document.querySelector('#page_ul');
+    let close = document.querySelector('#close');
+    
+    close.addEventListener('click', function() {
+      searchMask.style = 'display: none;'
+    })
+
+    let finds = [];
+    let contents = [];
+    let pageSize = 10;
+    items.forEach(item => {
+      let a = item.querySelector('a');
+      contents.push({
+        title: a.innerText,
+        details: a.dataset.c,
+        link: a.href
+      })
+      item.remove();
+    })
+
+    function insertStr(soure, start, count) {
+      let newStr = soure.substr(start, count);
+      return soure.slice(0, start) + '<em>' + newStr + '</em>' + soure.slice(start + count);
+    }
+
+    pageUl.addEventListener('click', function(event) {
+      let target = event.target;
+      if (target.__proto__ === HTMLSpanElement.prototype) {
+        appendResults(parseInt(target.dataset.i));
+      }
+    })
+
+    function appendResults(index) {
+      let htmlResult = '';
+      let start = index || 0;
+      let end = Math.min(start + pageSize, finds.length);
+      for (let i = start; i < end; i++) {
+        const current = finds[i];
+        let html = current.title;
+        let sum = 0;
+        let positions = current.positions;
+        positions.forEach(position => {
+          html = insertStr(html, position.start + sum, position.count);
+          sum += 9;
+        })
+        htmlResult += `<div class="item"><a class="result-title" href="${current.link}">${html}</a></div>`;
+      }
+      result.innerHTML = htmlResult;
+      pageUl.innerHTML = '';
+      let count = finds.length / pageSize;
+      let lis = '';
+      if (start !== 0) {
+        lis += `<span class="fa fa-angle-left" data-i='${start - 1}'></span>`;
+      }
+      for (let i = 0; i < count; i++) {
+        lis += `<span class='${i === start?'current':''}' data-i='${i}'>${i+1}</span>`;     
+      }
+      if (start+1 < count) {
+        lis += `<span class="fa fa-angle-right" data-i='${start+1}'></span>`;  
+      }
+      pageUl.innerHTML = lis;
+    }
+
+    function search(delay) {
+      let timer = null
+      return function () {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+          let start = Date.now();
+          let segments = searchBox.value.split(' ').filter(c => c != '');
+          if (segments.length <= 0) {
+            return;
+          }
+          finds = [];
+          let htmlResult = '';
+          contents.forEach(content => {
+            let title = content.title;
+            let positions = [];
+            let find = false;
+            segments.forEach((segment) => {
+              if (content.title.includes(segment)) {
+                find = true;
+                positions.push({
+                  start: content.title.indexOf(segment),
+                  count: segment.length
+                })
+              } else if (content.details.includes(segment)) {
+                find = true;
+              }
+            });
+            if (find) {
+              finds.push({
+                title: content.title,
+                link: content.link,
+                positions
+              });
+            }
+          })
+          appendResults(0);
+          statCount.textContent = finds.length;
+          statTimes.textContent = Date.now() - start;
+        }, delay)
+      }
+    }
+    searchBox.addEventListener('input', search(200));
+  }()
+</script>
+
+<input hidden id="copy" />
+<script>
+  let language = '';
+  if (language !== '') {
+    let map = new Map();
+    if (language === 'en') {
+      map.set('search', 'Search');
+      map.set('category', 'Categories');
+      map.set('article', 'Articles');
+      map.set('tag', 'Tags');
+      map.set('top', 'Top');
+      map.set('publish', 'published');
+      map.set('minute', ' minutes');
+      map.set('read-more', 'Read More');
+      map.set('view', 'View');
+      map.set('words', ' words');
+      map.set('category-in', 'category in');
+      map.set('preview', 'Meta');
+      map.set('index', 'Toc');
+      map.set('no-archives', "You haven't created yet");
+      map.set('archives', " articles in total");
+      map.set('cloud-tags', " tags in total");
+      map.set('copyright', "Copyright: ");
+      map.set('author', "Author: ");
+      map.set('link', "Link: ");
+      map.set('leave-message', "Leave a message");
+      map.set('format', "Links Format");
+      map.set('site-name', "Name: ");
+      map.set('site-link', "Link: ");
+      map.set('site-desc', "Desc: ");
+      map.set('stat', " related results, taking ");
+      map.set('stat-time', " ms");
+      map.set('site-img', "Image: ");
+    }
+
+    if (map.size > 0) {
+      let lanElems = document.querySelectorAll('.language');
+      lanElems.forEach(elem => {
+        let lan = elem.dataset.lan, text = map.get(lan);
+        if (elem.__proto__ === HTMLInputElement.prototype) {
+          elem.placeholder = text
+        } else {
+          if (elem.dataset.count) {
+            text = elem.dataset.count + text;
+          }
+          elem.textContent = text;
+        }
+      })
+    }
+  }
+  //拿来主义(真香)^_^，Clipboard 实现摘自掘金 https://juejin.im/post/5aefeb6e6fb9a07aa43c20af
+  window.Clipboard = (function (window, document, navigator) {
+    var textArea,
+      copy;
+
+    // 判断是不是ios端
+    function isOS() {
+      return navigator.userAgent.match(/ipad|iphone/i);
+    }
+    //创建文本元素
+    function createTextArea(text) {
+      textArea = document.createElement('textArea');
+      textArea.value = text;
+      textArea.style.width = 0;
+      textArea.style.height = 0;
+      textArea.clientHeight = 0;
+      textArea.clientWidth = 0;
+      document.body.appendChild(textArea);
+    }
+    //选择内容
+    function selectText() {
+      var range,
+        selection;
+
+      if (isOS()) {
+        range = document.createRange();
+        range.selectNodeContents(textArea);
+        selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        textArea.setSelectionRange(0, 999999);
+      } else {
+        textArea.select();
+      }
+    }
+
+    //复制到剪贴板
+    function copyToClipboard() {
+      try {
+        document.execCommand("Copy")
+      } catch (err) {
+        alert("复制错误！请手动复制！")
+      }
+      document.body.removeChild(textArea);
+    }
+
+    copy = function (text) {
+      createTextArea(text);
+      selectText();
+      copyToClipboard();
+    };
+
+    return {
+      copy: copy
+    };
+  })(window, document, navigator);
+
+  function copyCode(e) {
+    if (e.srcElement.tagName === 'SPAN' && e.srcElement.classList.contains('copy-code')) {
+      let code = e.currentTarget.querySelector('code');
+      var text = code.innerText;
+      if (e.srcElement.textContent === '复制成功') {
+        return;
+      }
+      e.srcElement.textContent = '复制成功';
+      (function (elem) {
+        setTimeout(() => {
+          if (elem.textContent === '复制成功') {
+            elem.textContent = '复制代码'
+          }
+        }, 1000);
+      })(e.srcElement)
+      Clipboard.copy(text);
+    }
+  }
+
+  let pres = document.querySelectorAll('pre');
+  pres.forEach(pre => {
+    let code = pre.querySelector('code');
+    let copyElem = document.createElement('span');
+    copyElem.classList.add('copy-code');
+    copyElem.textContent = '复制代码';
+    pre.appendChild(copyElem);
+    pre.onclick = copyCode
+  })
+
+</script>
+<script src="https://cdn.jsdelivr.net/gh/HCLonely/gridea@master/media/js/motion.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 200
+  });
+</script>
+
+
+
+</html>
